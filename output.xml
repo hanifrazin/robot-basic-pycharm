@@ -1,122 +1,594 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.12.8 on darwin)" generated="2025-02-20T15:43:32.672607" rpa="false" schemaversion="5">
-<suite id="s1" name="TestSuite" source="/Users/user/Documents/PycharmProjects/robot-basic-pycharm/tests/A-simple-example/TestSuite.robot">
-<test id="s1-t1" name="Login User with Password" line="9">
-<kw name="Connect to Server" owner="keywords">
+<robot generator="Robot 7.2.2 (Python 3.12.8 on darwin)" generated="2025-02-20T16:28:11.955845" rpa="false" schemaversion="5">
+<suite id="s1" name="Test" source="/Users/user/Documents/PycharmProjects/robot-basic-pycharm/tests/C-advanced-example-2/test.robot">
+<kw name="Connect to Server" owner="keywords" type="SETUP">
 <kw name="Connect" owner="CustomLibrary">
 <arg>fe80::aede:48ff:fe00:1122</arg>
-<status status="PASS" start="2025-02-20T15:43:32.694897" elapsed="0.000075"/>
+<status status="PASS" start="2025-02-20T16:28:11.976306" elapsed="0.000062"/>
 </kw>
-<status status="PASS" start="2025-02-20T15:43:32.694649" elapsed="0.000373"/>
+<status status="PASS" start="2025-02-20T16:28:11.976090" elapsed="0.000328"/>
 </kw>
+<test id="s1-t1" name="Access All Users With Admin Rights" line="11">
+<kw name="Login Admin" owner="keywords">
 <kw name="Login User" owner="CustomLibrary">
-<msg time="2025-02-20T15:43:32.695138" level="INFO">Attempting to authenticate user: ironman with password: 1234567890</msg>
-<msg time="2025-02-20T15:43:32.695157" level="INFO">Authentication successful for user: ironman</msg>
-<arg>ironman</arg>
-<arg>1234567890</arg>
+<msg time="2025-02-20T16:28:11.976950" level="INFO">Attempting to authenticate user: admin with password: @RBTFRMWRK@</msg>
+<msg time="2025-02-20T16:28:11.976969" level="INFO">Authentication successful for user: admin</msg>
+<arg>${ADMIN}[login]</arg>
+<arg>${ADMIN}[pwd]</arg>
 <doc>`Login User` authenticates a user to the backend.</doc>
-<status status="PASS" start="2025-02-20T15:43:32.695091" elapsed="0.000086"/>
+<status status="PASS" start="2025-02-20T16:28:11.976868" elapsed="0.000121"/>
 </kw>
 <kw name="Verify Valid Login" owner="keywords">
 <kw name="Get Server Version" owner="CustomLibrary">
-<msg time="2025-02-20T15:43:32.695433" level="INFO">${version} = 1.0.0</msg>
+<msg time="2025-02-20T16:28:11.977209" level="INFO">${version} = 1.0.0</msg>
 <var>${version}</var>
-<status status="PASS" start="2025-02-20T15:43:32.695378" elapsed="0.000067"/>
+<status status="PASS" start="2025-02-20T16:28:11.977154" elapsed="0.000066"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2025-02-20T15:43:32.695547" level="INFO">Length is 5.</msg>
+<msg time="2025-02-20T16:28:11.977313" level="INFO">Length is 5.</msg>
 <arg>${version}</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2025-02-20T15:43:32.695483" elapsed="0.000084"/>
+<status status="PASS" start="2025-02-20T16:28:11.977259" elapsed="0.000072"/>
 </kw>
 <kw name="Get Username" owner="CustomLibrary">
-<msg time="2025-02-20T15:43:32.695662" level="INFO">${name} = Tony Stark</msg>
+<msg time="2025-02-20T16:28:11.977419" level="INFO">${name} = Administrator</msg>
 <var>${name}</var>
 <doc>Returns the users full name of the given user_id or if None the own user data.</doc>
-<status status="PASS" start="2025-02-20T15:43:32.695610" elapsed="0.000064"/>
+<status status="PASS" start="2025-02-20T16:28:11.977370" elapsed="0.000059"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${name}</arg>
 <arg>${exp_full_name}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2025-02-20T15:43:32.695716" elapsed="0.000086"/>
+<status status="PASS" start="2025-02-20T16:28:11.977475" elapsed="0.000081"/>
 </kw>
-<arg>Tony Stark</arg>
-<status status="PASS" start="2025-02-20T15:43:32.695265" elapsed="0.000566"/>
+<arg>Administrator</arg>
+<status status="PASS" start="2025-02-20T16:28:11.977054" elapsed="0.000530"/>
 </kw>
-<kw name="Close Server Connection" owner="keywords" type="TEARDOWN">
-<kw name="Disconnect" owner="CustomLibrary">
-<status status="PASS" start="2025-02-20T15:43:32.696025" elapsed="0.000040"/>
+<doc>'Login Admin' is a Keyword.
+It calls 'Login User' from 'CustomLibrary.py'</doc>
+<status status="PASS" start="2025-02-20T16:28:11.976761" elapsed="0.000843"/>
 </kw>
-<status status="PASS" start="2025-02-20T15:43:32.695927" elapsed="0.000161"/>
+<kw name="Print All Users" owner="keywords">
+<kw name="Get All Users" owner="CustomLibrary">
+<msg time="2025-02-20T16:28:11.977914" level="INFO">${users} = [{'password': '1234567890', 'name': 'Tony Stark', 'right': 'user', 'active': True, 'login': 'ironman'}, {'password': '@RBTFRMWRK@', 'name': 'Administrator', 'right': 'admin', 'active': True, 'login': ...</msg>
+<var>${users}</var>
+<doc>`Get All Users` does return a list of user-dictionaries.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.977828" elapsed="0.000102"/>
 </kw>
-<tag>positive</tag>
-<status status="PASS" start="2025-02-20T15:43:32.694290" elapsed="0.001825"/>
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-20T16:28:11.978214" level="INFO">{'password': '1234567890', 'name': 'Tony Stark', 'right': 'user', 'active': True, 'login': 'ironman'}</msg>
+<arg>${user}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.978134" elapsed="0.000106"/>
+</kw>
+<var name="${user}">{'password': '1234567890', 'name': 'Tony Stark', 'right': 'user', 'active': True, 'login': 'ironman'}</var>
+<status status="PASS" start="2025-02-20T16:28:11.978073" elapsed="0.000189"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-20T16:28:11.978415" level="INFO">{'password': '@RBTFRMWRK@', 'name': 'Administrator', 'right': 'admin', 'active': True, 'login': 'admin'}</msg>
+<arg>${user}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.978356" elapsed="0.000084"/>
+</kw>
+<var name="${user}">{'password': '@RBTFRMWRK@', 'name': 'Administrator', 'right': 'admin', 'active': True, 'login': 'admin'}</var>
+<status status="PASS" start="2025-02-20T16:28:11.978314" elapsed="0.000142"/>
+</iter>
+<var>${user}</var>
+<value>@{users}</value>
+<status status="PASS" start="2025-02-20T16:28:11.977968" elapsed="0.000505"/>
+</for>
+<status status="PASS" start="2025-02-20T16:28:11.977691" elapsed="0.000811"/>
+</kw>
+<kw name="Logout User" owner="CustomLibrary" type="TEARDOWN">
+<doc>Logs out the current user.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.978605" elapsed="0.000067"/>
+</kw>
+<doc>Tests if all users can be accessed with Admin User.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.976450" elapsed="0.002255"/>
 </test>
-<test id="s1-t2" name="Denied Login with Wrong Password" line="15">
-<kw name="Connect to Server" owner="keywords">
-<kw name="Connect" owner="CustomLibrary">
-<arg>fe80::aede:48ff:fe00:1122</arg>
-<status status="PASS" start="2025-02-20T15:43:32.696450" elapsed="0.000041"/>
-</kw>
-<status status="PASS" start="2025-02-20T15:43:32.696365" elapsed="0.000151"/>
-</kw>
-<kw name="Run Keyword And Expect Error" owner="BuiltIn">
+<test id="s1-t2" name="Create User With Admin Rights" line="16">
+<kw name="Login Admin" owner="keywords">
 <kw name="Login User" owner="CustomLibrary">
-<msg time="2025-02-20T15:43:32.696673" level="INFO">Attempting to authenticate user: ironman with password: 123</msg>
-<msg time="2025-02-20T15:43:32.696686" level="INFO">Authentication failed for user: ironman</msg>
-<msg time="2025-02-20T15:43:32.696822" level="FAIL">ValueError: Invalid Password</msg>
-<arg>ironman</arg>
-<arg>123</arg>
+<msg time="2025-02-20T16:28:11.979172" level="INFO">Attempting to authenticate user: admin with password: @RBTFRMWRK@</msg>
+<msg time="2025-02-20T16:28:11.979186" level="INFO">Authentication successful for user: admin</msg>
+<arg>${ADMIN}[login]</arg>
+<arg>${ADMIN}[pwd]</arg>
 <doc>`Login User` authenticates a user to the backend.</doc>
-<status status="FAIL" start="2025-02-20T15:43:32.696636" elapsed="0.000840">ValueError: Invalid Password</status>
+<status status="PASS" start="2025-02-20T16:28:11.979107" elapsed="0.000100"/>
 </kw>
-<arg>*Invalid Password</arg>
-<arg>Login User</arg>
-<arg>ironman</arg>
-<arg>123</arg>
-<doc>Runs the keyword and checks that the expected error occurred.</doc>
-<status status="PASS" start="2025-02-20T15:43:32.696573" elapsed="0.001008"/>
-</kw>
-<kw name="Verify Unauthorised Access" owner="keywords">
-<kw name="Run Keyword And Expect Error" owner="BuiltIn">
+<kw name="Verify Valid Login" owner="keywords">
 <kw name="Get Server Version" owner="CustomLibrary">
-<msg time="2025-02-20T15:43:32.697872" level="FAIL">PermissionError: Unauthorized access</msg>
-<status status="FAIL" start="2025-02-20T15:43:32.697817" elapsed="0.000166">PermissionError: Unauthorized access</status>
+<msg time="2025-02-20T16:28:11.979414" level="INFO">${version} = 1.0.0</msg>
+<var>${version}</var>
+<status status="PASS" start="2025-02-20T16:28:11.979365" elapsed="0.000060"/>
 </kw>
-<arg>PermissionError*</arg>
-<arg>Get Server Version</arg>
-<doc>Runs the keyword and checks that the expected error occurred.</doc>
-<status status="PASS" start="2025-02-20T15:43:32.697758" elapsed="0.000311"/>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-02-20T16:28:11.979559" level="INFO">Length is 5.</msg>
+<arg>${version}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.979494" elapsed="0.000087"/>
 </kw>
-<status status="PASS" start="2025-02-20T15:43:32.697658" elapsed="0.000439"/>
+<kw name="Get Username" owner="CustomLibrary">
+<msg time="2025-02-20T16:28:11.979677" level="INFO">${name} = Administrator</msg>
+<var>${name}</var>
+<doc>Returns the users full name of the given user_id or if None the own user data.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.979624" elapsed="0.000065"/>
 </kw>
-<kw name="Close Server Connection" owner="keywords" type="TEARDOWN">
-<kw name="Disconnect" owner="CustomLibrary">
-<status status="PASS" start="2025-02-20T15:43:32.698287" elapsed="0.000036"/>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${name}</arg>
+<arg>${exp_full_name}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.979732" elapsed="0.000085"/>
 </kw>
-<status status="PASS" start="2025-02-20T15:43:32.698191" elapsed="0.000152"/>
+<arg>Administrator</arg>
+<status status="PASS" start="2025-02-20T16:28:11.979268" elapsed="0.000577"/>
 </kw>
-<tag>negative</tag>
-<status status="PASS" start="2025-02-20T15:43:32.696216" elapsed="0.002153"/>
+<doc>'Login Admin' is a Keyword.
+It calls 'Login User' from 'CustomLibrary.py'</doc>
+<status status="PASS" start="2025-02-20T16:28:11.979009" elapsed="0.000857"/>
+</kw>
+<kw name="Create New User" owner="CustomLibrary">
+<arg>name=Peter Parker</arg>
+<arg>login=spider</arg>
+<arg>password=123spiderman321</arg>
+<arg>right=user</arg>
+<doc>Creates a new user with the give data.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.979930" elapsed="0.000070"/>
+</kw>
+<kw name="Verify User Details" owner="keywords">
+<kw name="Get User Id" owner="CustomLibrary">
+<msg time="2025-02-20T16:28:11.980272" level="INFO">${user_id} = id_spider</msg>
+<var>${user_id}</var>
+<arg>${login}</arg>
+<doc>Returns the user_id based on login.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.980213" elapsed="0.000071"/>
+</kw>
+<kw name="Get User Details" owner="CustomLibrary">
+<msg time="2025-02-20T16:28:11.980410" level="INFO">${user_details} = {'password': '123spiderman321', 'name': 'Peter Parker', 'right': 'user', 'active': True, 'login': 'spider'}</msg>
+<var>${user_details}</var>
+<arg>${user_id}</arg>
+<doc>Returs the user details of the given user_id or if None the own user data.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.980322" elapsed="0.000099"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${user_details}[login]</arg>
+<arg>${login}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.980463" elapsed="0.000076"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${user_details}[name]</arg>
+<arg>${name}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.980580" elapsed="0.000071"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${user_details}[right]</arg>
+<arg>${right}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.980749" elapsed="0.000072"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-02-20T16:28:11.980925" level="INFO">Argument types are:
+&lt;class 'bool'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${user_details}[active]</arg>
+<arg>${active}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.980863" elapsed="0.000084"/>
+</kw>
+<arg>spider</arg>
+<arg>Peter Parker</arg>
+<doc>Keyword that fetches user details based on a login
+and verifies them against expected arguments.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.980087" elapsed="0.000884"/>
+</kw>
+<kw name="Logout User" owner="CustomLibrary">
+<doc>Logs out the current user.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.981022" elapsed="0.000034"/>
+</kw>
+<kw name="Login User" owner="CustomLibrary">
+<msg time="2025-02-20T16:28:11.981238" level="INFO">Attempting to authenticate user: spider with password: 123spiderman321</msg>
+<msg time="2025-02-20T16:28:11.981266" level="INFO">Authentication successful for user: spider</msg>
+<arg>spider</arg>
+<arg>123spiderman321</arg>
+<doc>`Login User` authenticates a user to the backend.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.981101" elapsed="0.000184"/>
+</kw>
+<kw name="Logout User" owner="CustomLibrary" type="TEARDOWN">
+<doc>Logs out the current user.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.981407" elapsed="0.000043"/>
+</kw>
+<doc>Tests if a new users can be created with Admin User.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.978813" elapsed="0.002675"/>
 </test>
+<test id="s1-t3" name="Update User with Admin Rights" line="29">
+<kw name="Login Admin" owner="keywords">
+<kw name="Login User" owner="CustomLibrary">
+<msg time="2025-02-20T16:28:11.982073" level="INFO">Attempting to authenticate user: admin with password: @RBTFRMWRK@</msg>
+<msg time="2025-02-20T16:28:11.982091" level="INFO">Authentication successful for user: admin</msg>
+<arg>${ADMIN}[login]</arg>
+<arg>${ADMIN}[pwd]</arg>
+<doc>`Login User` authenticates a user to the backend.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.981994" elapsed="0.000119"/>
+</kw>
+<kw name="Verify Valid Login" owner="keywords">
+<kw name="Get Server Version" owner="CustomLibrary">
+<msg time="2025-02-20T16:28:11.982337" level="INFO">${version} = 1.0.0</msg>
+<var>${version}</var>
+<status status="PASS" start="2025-02-20T16:28:11.982286" elapsed="0.000063"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-02-20T16:28:11.982441" level="INFO">Length is 5.</msg>
+<arg>${version}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.982388" elapsed="0.000070"/>
+</kw>
+<kw name="Get Username" owner="CustomLibrary">
+<msg time="2025-02-20T16:28:11.982541" level="INFO">${name} = Administrator</msg>
+<var>${name}</var>
+<doc>Returns the users full name of the given user_id or if None the own user data.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.982496" elapsed="0.000055"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${name}</arg>
+<arg>${exp_full_name}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.982592" elapsed="0.000076"/>
+</kw>
+<arg>Administrator</arg>
+<status status="PASS" start="2025-02-20T16:28:11.982185" elapsed="0.000509"/>
+</kw>
+<doc>'Login Admin' is a Keyword.
+It calls 'Login User' from 'CustomLibrary.py'</doc>
+<status status="PASS" start="2025-02-20T16:28:11.981875" elapsed="0.000838"/>
+</kw>
+<kw name="Change Users Password" owner="CustomLibrary">
+<arg>spider</arg>
+<arg>friendly_spider_2022</arg>
+<doc>Changes the password of a user by its name.
+Requires Admin priviliges!</doc>
+<status status="PASS" start="2025-02-20T16:28:11.982765" elapsed="0.000041"/>
+</kw>
+<kw name="Logout User" owner="CustomLibrary">
+<doc>Logs out the current user.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.982857" elapsed="0.000032"/>
+</kw>
+<kw name="Login User" owner="CustomLibrary">
+<msg time="2025-02-20T16:28:11.982964" level="INFO">Attempting to authenticate user: spider with password: friendly_spider_2022</msg>
+<msg time="2025-02-20T16:28:11.982975" level="INFO">Authentication successful for user: spider</msg>
+<arg>spider</arg>
+<arg>friendly_spider_2022</arg>
+<doc>`Login User` authenticates a user to the backend.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.982933" elapsed="0.000057"/>
+</kw>
+<kw name="Logout User" owner="CustomLibrary" type="TEARDOWN">
+<doc>Logs out the current user.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.983065" elapsed="0.000036"/>
+</kw>
+<doc>Changes Password of an existing user.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.981640" elapsed="0.001490"/>
+</test>
+<test id="s1-t4" name="Update Own Password With User Rights" line="36">
+<kw name="Login User" owner="CustomLibrary">
+<msg time="2025-02-20T16:28:11.983396" level="INFO">Attempting to authenticate user: hulk with password: Hulk...SMASH!</msg>
+<msg time="2025-02-20T16:28:11.983408" level="INFO">Authentication failed for user: hulk</msg>
+<msg time="2025-02-20T16:28:11.983461" level="FAIL">ValueError: Invalid Password</msg>
+<arg>hulk</arg>
+<arg>Hulk...SMASH!</arg>
+<doc>`Login User` authenticates a user to the backend.</doc>
+<status status="FAIL" start="2025-02-20T16:28:11.983363" elapsed="0.000483">ValueError: Invalid Password</status>
+</kw>
+<kw name="Change Own Password" owner="CustomLibrary">
+<arg>Don't make Hulk angry!</arg>
+<arg>Hulk...SMASH!</arg>
+<doc>Changes the own password given the new and current one.</doc>
+<status status="NOT RUN" start="2025-02-20T16:28:11.983917" elapsed="0.000013"/>
+</kw>
+<kw name="Logout User" owner="CustomLibrary">
+<doc>Logs out the current user.</doc>
+<status status="NOT RUN" start="2025-02-20T16:28:11.983979" elapsed="0.000008"/>
+</kw>
+<kw name="Login User" owner="CustomLibrary">
+<arg>hulk</arg>
+<arg>Don't make Hulk angry!</arg>
+<doc>`Login User` authenticates a user to the backend.</doc>
+<status status="NOT RUN" start="2025-02-20T16:28:11.984028" elapsed="0.000008"/>
+</kw>
+<kw name="Logout User" owner="CustomLibrary" type="TEARDOWN">
+<msg time="2025-02-20T16:28:11.984193" level="FAIL">ValueError: Invalid Token</msg>
+<doc>Logs out the current user.</doc>
+<status status="FAIL" start="2025-02-20T16:28:11.984130" elapsed="0.000168">ValueError: Invalid Token</status>
+</kw>
+<doc>Changes Password of an existing user.</doc>
+<status status="FAIL" start="2025-02-20T16:28:11.983217" elapsed="0.001123">ValueError: Invalid Password
+
+Also teardown failed:
+ValueError: Invalid Token</status>
+</test>
+<test id="s1-t5" name="Access Own Details With User Rights" line="43">
+<kw name="Login User" owner="CustomLibrary">
+<msg time="2025-02-20T16:28:11.984624" level="INFO">Attempting to authenticate user: ironman with password: 1234567890</msg>
+<msg time="2025-02-20T16:28:11.984637" level="INFO">Authentication successful for user: ironman</msg>
+<arg>ironman</arg>
+<arg>1234567890</arg>
+<doc>`Login User` authenticates a user to the backend.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.984586" elapsed="0.000067"/>
+</kw>
+<kw name="Get User Details By Name" owner="keywords">
+<if>
+<branch type="IF" condition="$login">
+<kw name="Get User Id" owner="CustomLibrary">
+<msg time="2025-02-20T16:28:11.985042" level="INFO">${user_id} = id_ironman</msg>
+<var>${user_id}</var>
+<arg>${login}</arg>
+<doc>Returns the user_id based on login.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.984978" elapsed="0.000075"/>
+</kw>
+<status status="PASS" start="2025-02-20T16:28:11.984882" elapsed="0.000188"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${user_id}</var>
+<arg>${NONE}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-20T16:28:11.985130" elapsed="0.000009"/>
+</kw>
+<status status="NOT RUN" start="2025-02-20T16:28:11.985087" elapsed="0.000109"/>
+</branch>
+<status status="PASS" start="2025-02-20T16:28:11.984866" elapsed="0.000343"/>
+</if>
+<kw name="Get User Details" owner="CustomLibrary">
+<msg time="2025-02-20T16:28:11.985334" level="INFO">${user_details} = {'password': '1234567890', 'name': 'Tony Stark', 'right': 'user', 'active': True, 'login': 'ironman'}</msg>
+<var>${user_details}</var>
+<arg>${user_id}</arg>
+<doc>Returs the user details of the given user_id or if None the own user data.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.985247" elapsed="0.000099"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-20T16:28:11.985442" level="INFO">{'password': '1234567890', 'name': 'Tony Stark', 'right': 'user', 'active': True, 'login': 'ironman'}</msg>
+<arg>${user_details}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.985388" elapsed="0.000072"/>
+</kw>
+<return>
+<value>${user_details}</value>
+<status status="PASS" start="2025-02-20T16:28:11.985481" elapsed="0.000021"/>
+</return>
+<arg>ironman</arg>
+<status status="PASS" start="2025-02-20T16:28:11.984776" elapsed="0.000769"/>
+</kw>
+<kw name="Get User Details By Name" owner="keywords">
+<if>
+<branch type="IF" condition="$login">
+<kw name="Get User Id" owner="CustomLibrary">
+<var>${user_id}</var>
+<arg>${login}</arg>
+<doc>Returns the user_id based on login.</doc>
+<status status="NOT RUN" start="2025-02-20T16:28:11.985944" elapsed="0.000009"/>
+</kw>
+<status status="NOT RUN" start="2025-02-20T16:28:11.985869" elapsed="0.000100"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-20T16:28:11.986083" level="INFO">${user_id} = None</msg>
+<var>${user_id}</var>
+<arg>${NONE}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.986019" elapsed="0.000074"/>
+</kw>
+<status status="PASS" start="2025-02-20T16:28:11.985982" elapsed="0.000127"/>
+</branch>
+<status status="PASS" start="2025-02-20T16:28:11.985859" elapsed="0.000260"/>
+</if>
+<kw name="Get User Details" owner="CustomLibrary">
+<msg time="2025-02-20T16:28:11.986220" level="INFO">${user_details} = {'password': '1234567890', 'name': 'Tony Stark', 'right': 'user', 'active': True, 'login': 'ironman'}</msg>
+<var>${user_details}</var>
+<arg>${user_id}</arg>
+<doc>Returs the user details of the given user_id or if None the own user data.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.986153" elapsed="0.000078"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-20T16:28:11.986318" level="INFO">{'password': '1234567890', 'name': 'Tony Stark', 'right': 'user', 'active': True, 'login': 'ironman'}</msg>
+<arg>${user_details}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.986270" elapsed="0.000065"/>
+</kw>
+<return>
+<value>${user_details}</value>
+<status status="PASS" start="2025-02-20T16:28:11.986353" elapsed="0.000015"/>
+</return>
+<status status="PASS" start="2025-02-20T16:28:11.985762" elapsed="0.000648"/>
+</kw>
+<kw name="Get User Details" owner="CustomLibrary">
+<doc>Returs the user details of the given user_id or if None the own user data.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.986459" elapsed="0.000038"/>
+</kw>
+<kw name="Verify User Details" owner="keywords">
+<kw name="Get User Id" owner="CustomLibrary">
+<msg time="2025-02-20T16:28:11.986742" level="INFO">${user_id} = id_ironman</msg>
+<var>${user_id}</var>
+<arg>${login}</arg>
+<doc>Returns the user_id based on login.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.986687" elapsed="0.000066"/>
+</kw>
+<kw name="Get User Details" owner="CustomLibrary">
+<msg time="2025-02-20T16:28:11.986860" level="INFO">${user_details} = {'password': '1234567890', 'name': 'Tony Stark', 'right': 'user', 'active': True, 'login': 'ironman'}</msg>
+<var>${user_details}</var>
+<arg>${user_id}</arg>
+<doc>Returs the user details of the given user_id or if None the own user data.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.986789" elapsed="0.000082"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${user_details}[login]</arg>
+<arg>${login}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.986912" elapsed="0.000076"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${user_details}[name]</arg>
+<arg>${name}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.987029" elapsed="0.000070"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${user_details}[right]</arg>
+<arg>${right}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.987140" elapsed="0.000072"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-02-20T16:28:11.987313" level="INFO">Argument types are:
+&lt;class 'bool'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${user_details}[active]</arg>
+<arg>${active}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.987251" elapsed="0.000082"/>
+</kw>
+<arg>ironman</arg>
+<arg>Tony Stark</arg>
+<doc>Keyword that fetches user details based on a login
+and verifies them against expected arguments.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.986573" elapsed="0.000783"/>
+</kw>
+<kw name="Logout User" owner="CustomLibrary" type="TEARDOWN">
+<doc>Logs out the current user.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.987438" elapsed="0.000040"/>
+</kw>
+<doc>Tests if a user can access own details</doc>
+<status status="PASS" start="2025-02-20T16:28:11.984438" elapsed="0.003070"/>
+</test>
+<test id="s1-t6" name="Access Other Users Details With User Rights" line="51">
+<kw name="Login User" owner="CustomLibrary" type="SETUP">
+<msg time="2025-02-20T16:28:11.987790" level="INFO">Attempting to authenticate user: ironman with password: 1234567890</msg>
+<msg time="2025-02-20T16:28:11.987802" level="INFO">Authentication successful for user: ironman</msg>
+<arg>ironman</arg>
+<arg>1234567890</arg>
+<doc>`Login User` authenticates a user to the backend.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.987755" elapsed="0.000118"/>
+</kw>
+<kw name="Get User Details By Name" owner="keywords">
+<if>
+<branch type="IF" condition="$login">
+<kw name="Get User Id" owner="CustomLibrary">
+<msg time="2025-02-20T16:28:11.988396" level="INFO">${user_id} = id_ironman</msg>
+<var>${user_id}</var>
+<arg>${login}</arg>
+<doc>Returns the user_id based on login.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.988319" elapsed="0.000090"/>
+</kw>
+<status status="PASS" start="2025-02-20T16:28:11.988200" elapsed="0.000227"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${user_id}</var>
+<arg>${NONE}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-20T16:28:11.988484" elapsed="0.000008"/>
+</kw>
+<status status="NOT RUN" start="2025-02-20T16:28:11.988442" elapsed="0.000066"/>
+</branch>
+<status status="PASS" start="2025-02-20T16:28:11.988188" elapsed="0.000330"/>
+</if>
+<kw name="Get User Details" owner="CustomLibrary">
+<msg time="2025-02-20T16:28:11.988647" level="INFO">${user_details} = {'password': '1234567890', 'name': 'Tony Stark', 'right': 'user', 'active': True, 'login': 'ironman'}</msg>
+<var>${user_details}</var>
+<arg>${user_id}</arg>
+<doc>Returs the user details of the given user_id or if None the own user data.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.988556" elapsed="0.000103"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-20T16:28:11.988794" level="INFO">{'password': '1234567890', 'name': 'Tony Stark', 'right': 'user', 'active': True, 'login': 'ironman'}</msg>
+<arg>${user_details}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.988711" elapsed="0.000101"/>
+</kw>
+<return>
+<value>${user_details}</value>
+<status status="PASS" start="2025-02-20T16:28:11.988874" elapsed="0.000022"/>
+</return>
+<arg>ironman</arg>
+<status status="PASS" start="2025-02-20T16:28:11.988058" elapsed="0.000885"/>
+</kw>
+<kw name="Get User Details By Name" owner="keywords">
+<if>
+<branch type="IF" condition="$login">
+<kw name="Get User Id" owner="CustomLibrary">
+<msg time="2025-02-20T16:28:11.989374" level="FAIL">ValueError: User not found</msg>
+<var>${user_id}</var>
+<arg>${login}</arg>
+<doc>Returns the user_id based on login.</doc>
+<status status="FAIL" start="2025-02-20T16:28:11.989287" elapsed="0.000289">ValueError: User not found</status>
+</kw>
+<status status="FAIL" start="2025-02-20T16:28:11.989199" elapsed="0.000417">ValueError: User not found</status>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${user_id}</var>
+<arg>${NONE}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-20T16:28:11.989685" elapsed="0.000009"/>
+</kw>
+<status status="NOT RUN" start="2025-02-20T16:28:11.989636" elapsed="0.000076"/>
+</branch>
+<status status="FAIL" start="2025-02-20T16:28:11.989188" elapsed="0.000543">ValueError: User not found</status>
+</if>
+<kw name="Get User Details" owner="CustomLibrary">
+<var>${user_details}</var>
+<arg>${user_id}</arg>
+<doc>Returs the user details of the given user_id or if None the own user data.</doc>
+<status status="NOT RUN" start="2025-02-20T16:28:11.989774" elapsed="0.000008"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${user_details}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-20T16:28:11.989823" elapsed="0.000018"/>
+</kw>
+<return>
+<value>${user_details}</value>
+<status status="NOT RUN" start="2025-02-20T16:28:11.989861" elapsed="0.000007"/>
+</return>
+<arg>hulk</arg>
+<status status="FAIL" start="2025-02-20T16:28:11.989049" elapsed="0.000872">ValueError: User not found</status>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>This keyword not be executed</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-02-20T16:28:11.989983" elapsed="0.000009"/>
+</kw>
+<kw name="Log" owner="BuiltIn" type="TEARDOWN">
+<msg time="2025-02-20T16:28:11.990133" level="INFO">This is executed.</msg>
+<arg>This is executed.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-20T16:28:11.990087" elapsed="0.000066"/>
+</kw>
+<doc>Tests does fail, due to insufficiant rights...</doc>
+<status status="FAIL" start="2025-02-20T16:28:11.987592" elapsed="0.002590">ValueError: User not found</status>
+</test>
+<kw name="Disconnect" owner="CustomLibrary" type="TEARDOWN">
+<status status="PASS" start="2025-02-20T16:28:11.990436" elapsed="0.000041"/>
+</kw>
 <doc>A test suite for valid login.
 
 Keywords are imported from the resource file</doc>
-<status status="PASS" start="2025-02-20T15:43:32.673293" elapsed="0.025302"/>
+<status status="FAIL" start="2025-02-20T16:28:11.957195" elapsed="0.033297"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="4" fail="2" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">negative</stat>
-<stat pass="1" fail="0" skip="0">positive</stat>
 </tag>
 <suite>
-<stat name="TestSuite" id="s1" pass="2" fail="0" skip="0">TestSuite</stat>
+<stat name="Test" id="s1" pass="4" fail="2" skip="0">Test</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2025-02-20T16:28:11.972528" level="WARN">Error in file '/Users/user/Documents/PycharmProjects/robot-basic-pycharm/tests/C-advanced-example-2/keywords.resource' on line 66: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
 </errors>
 </robot>
