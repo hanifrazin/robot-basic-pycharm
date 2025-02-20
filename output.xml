@@ -1,76 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.12.8 on darwin)" generated="2025-02-20T20:47:03.791663" rpa="false" schemaversion="5">
-<suite id="s1" name="Calculator Test Suite" source="/Users/user/Documents/PycharmProjects/robot-basic-pycharm/tests/D-BDD-example/Calculator_Test_Suite.robot">
-<test id="s1-t1" name="Test Calculator With BDD Syntax" line="6">
-<kw name="Given The Calculator is Running" owner="Calc_keywords">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-02-20T20:47:03.813223" level="INFO">Opening Calculator</msg>
-<arg>Opening Calculator</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-20T20:47:03.813132" elapsed="0.000130"/>
+<robot generator="Robot 7.2.2 (Python 3.12.8 on darwin)" generated="2025-02-20T21:38:29.539744" rpa="false" schemaversion="5">
+<suite id="s1" name="TestSuite" source="/Users/user/Documents/PycharmProjects/robot-basic-pycharm/tests/H-Custom/TestSuite.robot">
+<test id="s1-t1" name="Test Case 1" line="6">
+<kw name="Say Hello World" owner="keyword">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Hello World</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-20T21:38:29.561350" elapsed="0.000137"/>
 </kw>
-<status status="PASS" start="2025-02-20T20:47:03.812831" elapsed="0.000486"/>
+<status status="PASS" start="2025-02-20T21:38:29.560947" elapsed="0.000598"/>
 </kw>
-<kw name="When The User Enters The Term &quot;1 + 1&quot;" owner="Calc_keywords" source_name="The User Enters The Term &quot;${term}&quot;">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-02-20T20:47:03.813634" level="INFO">Entering 1 + 1</msg>
-<arg>Entering ${term}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-20T20:47:03.813560" elapsed="0.000098"/>
-</kw>
-<kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2025-02-20T20:47:03.813797" level="INFO">${term} = 1 + 1</msg>
-<arg>${term}</arg>
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2025-02-20T20:47:03.813713" elapsed="0.000102"/>
-</kw>
-<status status="PASS" start="2025-02-20T20:47:03.813431" elapsed="0.000409"/>
-</kw>
-<kw name="And The User Triggers The Calculation" owner="Calc_keywords">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-02-20T20:47:03.814065" level="INFO">Triggering Calculation</msg>
-<arg>Triggering Calculation</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-20T20:47:03.814025" elapsed="0.000059"/>
-</kw>
-<kw name="Calculate Term" owner="Calculator">
-<msg time="2025-02-20T20:47:03.814305" level="INFO">Calculating Term: 1 + 1</msg>
-<msg time="2025-02-20T20:47:03.814339" level="INFO">${result} = 2</msg>
-<var>${result}</var>
-<arg>${term}</arg>
-<doc>Interpret term as a mathematical expression
-and return the result</doc>
-<status status="PASS" start="2025-02-20T20:47:03.814124" elapsed="0.000225"/>
-</kw>
-<kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2025-02-20T20:47:03.814471" level="INFO">${result} = 2</msg>
-<arg>${result}</arg>
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2025-02-20T20:47:03.814397" elapsed="0.000091"/>
-</kw>
-<status status="PASS" start="2025-02-20T20:47:03.813923" elapsed="0.000589"/>
-</kw>
-<kw name="Then The Result Should Be &quot;2&quot;" owner="Calc_keywords" source_name="The Result Should Be &quot;${expected}&quot;">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-02-20T20:47:03.814735" level="INFO">Checking Result</msg>
-<arg>Checking Result</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-02-20T20:47:03.814698" elapsed="0.000056"/>
-</kw>
-<kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2025-02-20T20:47:03.814865" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<arg>${result}</arg>
-<arg>${expected}</arg>
-<doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2025-02-20T20:47:03.814796" elapsed="0.000101"/>
-</kw>
-<status status="PASS" start="2025-02-20T20:47:03.814586" elapsed="0.000335"/>
-</kw>
-<status status="PASS" start="2025-02-20T20:47:03.812432" elapsed="0.002546"/>
+<status status="PASS" start="2025-02-20T21:38:29.560581" elapsed="0.001052"/>
 </test>
-<status status="PASS" start="2025-02-20T20:47:03.792424" elapsed="0.022735"/>
+<status status="PASS" start="2025-02-20T21:38:29.540697" elapsed="0.021137"/>
 </suite>
 <statistics>
 <total>
@@ -79,7 +21,7 @@ and return the result</doc>
 <tag>
 </tag>
 <suite>
-<stat name="Calculator Test Suite" id="s1" pass="1" fail="0" skip="0">Calculator Test Suite</stat>
+<stat name="TestSuite" id="s1" pass="1" fail="0" skip="0">TestSuite</stat>
 </suite>
 </statistics>
 <errors>
