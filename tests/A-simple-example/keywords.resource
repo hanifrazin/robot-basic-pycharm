@@ -11,7 +11,7 @@ Connect to Server
 Close Server Connection
     Disconnect
 
-Login User
+CustomLibrary.Login User    # Seharusnya ditampilkan Login User namun di vscode ada error di extension jadi nya cukup panggil CustomLibrary.Login User
     [Arguments]    ${login}    ${password}
     Set Login Name    ${login}
     Set Password    ${password}

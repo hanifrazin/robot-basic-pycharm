@@ -1,149 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.12.8 on darwin)" generated="2025-02-20T11:58:10.350250" rpa="false" schemaversion="5">
-<suite id="s1" name="Robot-Basic-Pycharm" source="/Users/user/PycharmProjects/robot-basic-pycharm">
-<suite id="s1-s1" name="Tests" source="/Users/user/PycharmProjects/robot-basic-pycharm/tests">
-<suite id="s1-s1-s1" name="1-Simple-Example" source="/Users/user/PycharmProjects/robot-basic-pycharm/tests/1-simple-example">
-<suite id="s1-s1-s1-s1" name="TestSuite" source="/Users/user/PycharmProjects/robot-basic-pycharm/tests/1-simple-example/TestSuite.robot">
-<test id="s1-s1-s1-s1-t1" name="Login User with Password" line="9">
+<robot generator="Robot 7.2.2 (Python 3.12.8 on darwin)" generated="2025-02-20T15:43:32.672607" rpa="false" schemaversion="5">
+<suite id="s1" name="TestSuite" source="/Users/user/Documents/PycharmProjects/robot-basic-pycharm/tests/A-simple-example/TestSuite.robot">
+<test id="s1-t1" name="Login User with Password" line="9">
 <kw name="Connect to Server" owner="keywords">
 <kw name="Connect" owner="CustomLibrary">
 <arg>fe80::aede:48ff:fe00:1122</arg>
-<status status="PASS" start="2025-02-20T11:58:10.374072" elapsed="0.000078"/>
+<status status="PASS" start="2025-02-20T15:43:32.694897" elapsed="0.000075"/>
 </kw>
-<status status="PASS" start="2025-02-20T11:58:10.373802" elapsed="0.000399"/>
+<status status="PASS" start="2025-02-20T15:43:32.694649" elapsed="0.000373"/>
 </kw>
-<kw name="Login User" owner="keywords">
-<kw name="Set Login Name" owner="CustomLibrary">
-<msg time="2025-02-20T11:58:10.374491" level="INFO">User login set to: ironman</msg>
-<arg>${login}</arg>
-<doc>Sets the users login name and stores it for authentication.</doc>
-<status status="PASS" start="2025-02-20T11:58:10.374432" elapsed="0.000085"/>
-</kw>
-<kw name="Set Password" owner="CustomLibrary">
-<msg time="2025-02-20T11:58:10.374713" level="INFO">Password set.</msg>
-<arg>${password}</arg>
-<doc>Sets the users login name and stores it for authentication.</doc>
-<status status="PASS" start="2025-02-20T11:58:10.374560" elapsed="0.000174"/>
-</kw>
-<kw name="Execute Login" owner="CustomLibrary">
-<msg time="2025-02-20T11:58:10.374806" level="INFO">Attempting to authenticate user: ironman with password: 1234567890</msg>
-<msg time="2025-02-20T11:58:10.374818" level="INFO">Authentication successful for user: ironman</msg>
-<msg time="2025-02-20T11:58:10.374828" level="INFO">User session successfully set.</msg>
-<doc>Triggers the authentication process at the backend and stores the session token.</doc>
-<status status="PASS" start="2025-02-20T11:58:10.374775" elapsed="0.000073"/>
-</kw>
+<kw name="Login User" owner="CustomLibrary">
+<msg time="2025-02-20T15:43:32.695138" level="INFO">Attempting to authenticate user: ironman with password: 1234567890</msg>
+<msg time="2025-02-20T15:43:32.695157" level="INFO">Authentication successful for user: ironman</msg>
 <arg>ironman</arg>
 <arg>1234567890</arg>
-<status status="PASS" start="2025-02-20T11:58:10.374306" elapsed="0.000567"/>
+<doc>`Login User` authenticates a user to the backend.</doc>
+<status status="PASS" start="2025-02-20T15:43:32.695091" elapsed="0.000086"/>
 </kw>
 <kw name="Verify Valid Login" owner="keywords">
 <kw name="Get Server Version" owner="CustomLibrary">
-<msg time="2025-02-20T11:58:10.375111" level="INFO">${version} = 1.0.0</msg>
+<msg time="2025-02-20T15:43:32.695433" level="INFO">${version} = 1.0.0</msg>
 <var>${version}</var>
-<status status="PASS" start="2025-02-20T11:58:10.375061" elapsed="0.000062"/>
+<status status="PASS" start="2025-02-20T15:43:32.695378" elapsed="0.000067"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2025-02-20T11:58:10.375216" level="INFO">Length is 5.</msg>
+<msg time="2025-02-20T15:43:32.695547" level="INFO">Length is 5.</msg>
 <arg>${version}</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2025-02-20T11:58:10.375160" elapsed="0.000074"/>
+<status status="PASS" start="2025-02-20T15:43:32.695483" elapsed="0.000084"/>
 </kw>
 <kw name="Get Username" owner="CustomLibrary">
-<msg time="2025-02-20T11:58:10.375320" level="INFO">${name} = Tony Stark</msg>
+<msg time="2025-02-20T15:43:32.695662" level="INFO">${name} = Tony Stark</msg>
 <var>${name}</var>
 <doc>Returns the users full name of the given user_id or if None the own user data.</doc>
-<status status="PASS" start="2025-02-20T11:58:10.375272" elapsed="0.000058"/>
+<status status="PASS" start="2025-02-20T15:43:32.695610" elapsed="0.000064"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${name}</arg>
 <arg>${exp_full_name}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2025-02-20T11:58:10.375371" elapsed="0.000081"/>
+<status status="PASS" start="2025-02-20T15:43:32.695716" elapsed="0.000086"/>
 </kw>
 <arg>Tony Stark</arg>
-<status status="PASS" start="2025-02-20T11:58:10.374955" elapsed="0.000522"/>
+<status status="PASS" start="2025-02-20T15:43:32.695265" elapsed="0.000566"/>
 </kw>
 <kw name="Close Server Connection" owner="keywords" type="TEARDOWN">
 <kw name="Disconnect" owner="CustomLibrary">
-<status status="PASS" start="2025-02-20T11:58:10.375673" elapsed="0.000035"/>
+<status status="PASS" start="2025-02-20T15:43:32.696025" elapsed="0.000040"/>
 </kw>
-<status status="PASS" start="2025-02-20T11:58:10.375576" elapsed="0.000152"/>
+<status status="PASS" start="2025-02-20T15:43:32.695927" elapsed="0.000161"/>
 </kw>
 <tag>positive</tag>
-<status status="PASS" start="2025-02-20T11:58:10.373432" elapsed="0.002327"/>
+<status status="PASS" start="2025-02-20T15:43:32.694290" elapsed="0.001825"/>
 </test>
-<test id="s1-s1-s1-s1-t2" name="Denied Login with Wrong Password" line="15">
+<test id="s1-t2" name="Denied Login with Wrong Password" line="15">
 <kw name="Connect to Server" owner="keywords">
 <kw name="Connect" owner="CustomLibrary">
 <arg>fe80::aede:48ff:fe00:1122</arg>
-<status status="PASS" start="2025-02-20T11:58:10.376102" elapsed="0.000041"/>
+<status status="PASS" start="2025-02-20T15:43:32.696450" elapsed="0.000041"/>
 </kw>
-<status status="PASS" start="2025-02-20T11:58:10.376019" elapsed="0.000147"/>
+<status status="PASS" start="2025-02-20T15:43:32.696365" elapsed="0.000151"/>
 </kw>
 <kw name="Run Keyword And Expect Error" owner="BuiltIn">
-<kw name="Login User" owner="keywords">
-<kw name="Set Login Name" owner="CustomLibrary">
-<msg time="2025-02-20T11:58:10.376443" level="INFO">User login set to: ironman</msg>
-<arg>${login}</arg>
-<doc>Sets the users login name and stores it for authentication.</doc>
-<status status="PASS" start="2025-02-20T11:58:10.376401" elapsed="0.000060"/>
-</kw>
-<kw name="Set Password" owner="CustomLibrary">
-<msg time="2025-02-20T11:58:10.376541" level="INFO">Password set.</msg>
-<arg>${password}</arg>
-<doc>Sets the users login name and stores it for authentication.</doc>
-<status status="PASS" start="2025-02-20T11:58:10.376497" elapsed="0.000061"/>
-</kw>
-<kw name="Execute Login" owner="CustomLibrary">
-<msg time="2025-02-20T11:58:10.376623" level="INFO">Attempting to authenticate user: ironman with password: 123</msg>
-<msg time="2025-02-20T11:58:10.376634" level="INFO">Authentication failed for user: ironman</msg>
-<msg time="2025-02-20T11:58:10.376691" level="FAIL">ValueError: Invalid Password</msg>
-<doc>Triggers the authentication process at the backend and stores the session token.</doc>
-<status status="FAIL" start="2025-02-20T11:58:10.376595" elapsed="0.000993">ValueError: Invalid Password</status>
-</kw>
+<kw name="Login User" owner="CustomLibrary">
+<msg time="2025-02-20T15:43:32.696673" level="INFO">Attempting to authenticate user: ironman with password: 123</msg>
+<msg time="2025-02-20T15:43:32.696686" level="INFO">Authentication failed for user: ironman</msg>
+<msg time="2025-02-20T15:43:32.696822" level="FAIL">ValueError: Invalid Password</msg>
 <arg>ironman</arg>
 <arg>123</arg>
-<status status="FAIL" start="2025-02-20T11:58:10.376304" elapsed="0.001358">ValueError: Invalid Password</status>
+<doc>`Login User` authenticates a user to the backend.</doc>
+<status status="FAIL" start="2025-02-20T15:43:32.696636" elapsed="0.000840">ValueError: Invalid Password</status>
 </kw>
 <arg>*Invalid Password</arg>
 <arg>Login User</arg>
 <arg>ironman</arg>
 <arg>123</arg>
 <doc>Runs the keyword and checks that the expected error occurred.</doc>
-<status status="PASS" start="2025-02-20T11:58:10.376225" elapsed="0.001551"/>
+<status status="PASS" start="2025-02-20T15:43:32.696573" elapsed="0.001008"/>
 </kw>
 <kw name="Verify Unauthorised Access" owner="keywords">
 <kw name="Run Keyword And Expect Error" owner="BuiltIn">
 <kw name="Get Server Version" owner="CustomLibrary">
-<msg time="2025-02-20T11:58:10.378116" level="FAIL">PermissionError: Unauthorized access</msg>
-<status status="FAIL" start="2025-02-20T11:58:10.378059" elapsed="0.000171">PermissionError: Unauthorized access</status>
+<msg time="2025-02-20T15:43:32.697872" level="FAIL">PermissionError: Unauthorized access</msg>
+<status status="FAIL" start="2025-02-20T15:43:32.697817" elapsed="0.000166">PermissionError: Unauthorized access</status>
 </kw>
 <arg>PermissionError*</arg>
 <arg>Get Server Version</arg>
 <doc>Runs the keyword and checks that the expected error occurred.</doc>
-<status status="PASS" start="2025-02-20T11:58:10.377993" elapsed="0.000324"/>
+<status status="PASS" start="2025-02-20T15:43:32.697758" elapsed="0.000311"/>
 </kw>
-<status status="PASS" start="2025-02-20T11:58:10.377876" elapsed="0.000469"/>
+<status status="PASS" start="2025-02-20T15:43:32.697658" elapsed="0.000439"/>
 </kw>
 <kw name="Close Server Connection" owner="keywords" type="TEARDOWN">
 <kw name="Disconnect" owner="CustomLibrary">
-<status status="PASS" start="2025-02-20T11:58:10.378550" elapsed="0.000143"/>
+<status status="PASS" start="2025-02-20T15:43:32.698287" elapsed="0.000036"/>
 </kw>
-<status status="PASS" start="2025-02-20T11:58:10.378448" elapsed="0.000269"/>
+<status status="PASS" start="2025-02-20T15:43:32.698191" elapsed="0.000152"/>
 </kw>
 <tag>negative</tag>
-<status status="PASS" start="2025-02-20T11:58:10.375863" elapsed="0.002889"/>
+<status status="PASS" start="2025-02-20T15:43:32.696216" elapsed="0.002153"/>
 </test>
 <doc>A test suite for valid login.
 
 Keywords are imported from the resource file</doc>
-<status status="PASS" start="2025-02-20T11:58:10.369750" elapsed="0.009190"/>
-</suite>
-<status status="PASS" start="2025-02-20T11:58:10.369298" elapsed="0.009974"/>
-</suite>
-<status status="PASS" start="2025-02-20T11:58:10.368825" elapsed="0.010690"/>
-</suite>
-<status status="PASS" start="2025-02-20T11:58:10.351223" elapsed="0.028493"/>
+<status status="PASS" start="2025-02-20T15:43:32.673293" elapsed="0.025302"/>
 </suite>
 <statistics>
 <total>
@@ -154,10 +114,7 @@ Keywords are imported from the resource file</doc>
 <stat pass="1" fail="0" skip="0">positive</stat>
 </tag>
 <suite>
-<stat name="Robot-Basic-Pycharm" id="s1" pass="2" fail="0" skip="0">Robot-Basic-Pycharm</stat>
-<stat name="Tests" id="s1-s1" pass="2" fail="0" skip="0">Robot-Basic-Pycharm.Tests</stat>
-<stat name="1-Simple-Example" id="s1-s1-s1" pass="2" fail="0" skip="0">Robot-Basic-Pycharm.Tests.1-Simple-Example</stat>
-<stat name="TestSuite" id="s1-s1-s1-s1" pass="2" fail="0" skip="0">Robot-Basic-Pycharm.Tests.1-Simple-Example.TestSuite</stat>
+<stat name="TestSuite" id="s1" pass="2" fail="0" skip="0">TestSuite</stat>
 </suite>
 </statistics>
 <errors>

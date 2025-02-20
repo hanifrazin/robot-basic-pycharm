@@ -19,8 +19,12 @@ Test with Keywords
     ${current_text}=               Get Stored Text
     Should Be Equal                ${current_text}                    Hail Our Robot Overlords!
 
-Test for the year 2022
+Test for the year 2022clea
     [Documentation]                Tests if it is still 2022...
     ${date}=                       Get Current Date                    result_format=datetime
     Log                            ${date}
     Should Be Equal As Strings     ${date.year}                        2022
+
+Test Case that fails
+    Check Correct Greeting        Hail Our Robot Overlords!
+    Check Correct Greeting        Hello World!
