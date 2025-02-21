@@ -1,0 +1,27 @@
+Menjalankan semua file tests
+    1.  Ubah izin file agar dapat dieksekusi: Buka Terminal dan navigasikan ke direktori 
+        tempat Anda menyimpan file cmd-execute-all.txt. 
+    
+        Kemudian, jalankan perintah berikut:
+        chmod +x cmd-execute-all.txt
+    
+    2.  Perintah chmod +x akan memberikan izin eksekusi ke file tersebut.
+        Jalankan skrip: Di Terminal, jalankan file tersebut dengan perintah:
+        ./cmd-execute-all.txt
+
+Menjalankan satu baris command
+Jika Anda menggunakan zsh (Z Shell) sebagai shell default Anda, 
+Anda cukup mengganti bash dengan zsh di akhir perintah. 
+Berikut adalah bagaimana perintah tersebut akan terlihat:
+
+sed -n '2p' command-robot-runner.txt | sed 's/&$//' | zsh
+
+Berikut penjelasannya
+1. sed: Ini adalah stream editor yang digunakan untuk memanipulasi teks. 
+Dalam konteks ini, kita menggunakannya untuk mengambil baris tertentu dari file.
+2. -n: Opsi ini memberitahu sed untuk tidak mencetak semua baris secara default. 
+Tanpa opsi ini, sed akan mencetak semua baris yang diproses.
+3. '2p': Ini adalah perintah yang diberikan kepada sed.
+    3.1. 2: Menunjukkan bahwa kita ingin mengambil baris kedua dari file.
+    3.2. p: Perintah ini berarti "print" (cetak). Jadi, 2p berarti "cetak baris kedua".
+

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.8 on darwin)" generated="2025-02-21T21:06:53.039607" rpa="false" schemaversion="5">
+<suite id="s1" name="4 In Zip" source="/Users/user/Documents/PycharmProjects/robot-basic-pycharm/tests/F-FOR-Loops/4_in_zip.robot">
+<test id="s1-t1" name="Combine Two Loops" line="7">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Full Names:</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-21T21:06:53.109467" elapsed="0.000166"/>
+</kw>
+<for flavor="IN ZIP">
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${first} ${last}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-21T21:06:53.109933" elapsed="0.000111"/>
+</kw>
+<var name="${first}">Bruce</var>
+<var name="${last}">Banner</var>
+<status status="PASS" start="2025-02-21T21:06:53.109875" elapsed="0.000195"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${first} ${last}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-21T21:06:53.110167" elapsed="0.000083"/>
+</kw>
+<var name="${first}">Steve</var>
+<var name="${last}">Rogers</var>
+<status status="PASS" start="2025-02-21T21:06:53.110129" elapsed="0.000139"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${first} ${last}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-21T21:06:53.110347" elapsed="0.000075"/>
+</kw>
+<var name="${first}">Peter</var>
+<var name="${last}">Parker</var>
+<status status="PASS" start="2025-02-21T21:06:53.110314" elapsed="0.000125"/>
+</iter>
+<var>${first}</var>
+<var>${last}</var>
+<value>${First Name}</value>
+<value>${Last Name}</value>
+<status status="PASS" start="2025-02-21T21:06:53.109725" elapsed="0.000730"/>
+</for>
+<status status="PASS" start="2025-02-21T21:06:53.108992" elapsed="0.001556"/>
+</test>
+<status status="PASS" start="2025-02-21T21:06:53.041589" elapsed="0.069209"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="4 In Zip" id="s1" pass="1" fail="0" skip="0">4 In Zip</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

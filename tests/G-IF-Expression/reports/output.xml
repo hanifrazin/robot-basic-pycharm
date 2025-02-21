@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.8 on darwin)" generated="2025-02-21T21:06:53.041675" rpa="false" schemaversion="5">
+<suite id="s1" name="IF" source="/Users/user/Documents/PycharmProjects/robot-basic-pycharm/tests/G-IF-Expression/IF.robot">
+<test id="s1-t1" name="Simple IF" line="6">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-21T21:06:53.072542" level="INFO">${random_number} = 3</msg>
+<var>${random_number}</var>
+<arg>random.randint(0,10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-21T21:06:53.072360" elapsed="0.000205"/>
+</kw>
+<if>
+<branch type="IF" condition="${random_number} % 2">
+<kw name="Console">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${output}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-21T21:06:53.072998" elapsed="0.000086"/>
+</kw>
+<arg>${random_number} is odd!</arg>
+<status status="PASS" start="2025-02-21T21:06:53.072815" elapsed="0.000306"/>
+</kw>
+<status status="PASS" start="2025-02-21T21:06:53.072656" elapsed="0.000481"/>
+</branch>
+<status status="PASS" start="2025-02-21T21:06:53.072636" elapsed="0.000519"/>
+</if>
+<status status="PASS" start="2025-02-21T21:06:53.071864" elapsed="0.001354"/>
+</test>
+<test id="s1-t2" name="IF Expression" line="12">
+<for flavor="IN RANGE">
+<iter>
+<if>
+<branch type="IF" condition="$i &lt;= 3">
+<kw name="Console">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${output}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-21T21:06:53.073832" elapsed="0.000070"/>
+</kw>
+<arg>Low ${i}</arg>
+<status status="PASS" start="2025-02-21T21:06:53.073701" elapsed="0.000230"/>
+</kw>
+<status status="PASS" start="2025-02-21T21:06:53.073581" elapsed="0.000363"/>
+</branch>
+<branch type="ELSE IF" condition="$i &gt; 3 and $i &lt; 7">
+<kw name="Console">
+<arg>Medium ${i}</arg>
+<status status="NOT RUN" start="2025-02-21T21:06:53.074010" elapsed="0.000010"/>
+</kw>
+<status status="NOT RUN" start="2025-02-21T21:06:53.073959" elapsed="0.000074"/>
+</branch>
+<branch type="ELSE">
+<kw name="Console">
+<arg>High ${i}</arg>
+<status status="NOT RUN" start="2025-02-21T21:06:53.074084" elapsed="0.000008"/>
+</kw>
+<status status="NOT RUN" start="2025-02-21T21:06:53.074044" elapsed="0.000060"/>
+</branch>
+<status status="PASS" start="2025-02-21T21:06:53.073571" elapsed="0.000543"/>
+</if>
+<var name="${i}">0</var>
+<status status="PASS" start="2025-02-21T21:06:53.073552" elapsed="0.000574"/>
+</iter>
+<iter>
+<if>
+<branch type="IF" condition="$i &lt;= 3">
+<kw name="Console">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${output}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-21T21:06:53.074420" elapsed="0.000062"/>
+</kw>
+<arg>Low ${i}</arg>
+<status status="PASS" start="2025-02-21T21:06:53.074300" elapsed="0.000207"/>
+</kw>
+<status status="PASS" start="2025-02-21T21:06:53.074219" elapsed="0.000300"/>
+</branch>
+<branch type="ELSE IF" condition="$i &gt; 3 and $i &lt; 7">
+<kw name="Console">
+<arg>Medium ${i}</arg>
+<status status="NOT RUN" start="2025-02-21T21:06:53.074576" elapsed="0.000009"/>
+</kw>
+<status status="NOT RUN" start="2025-02-21T21:06:53.074531" elapsed="0.000066"/>
+</branch>
+<branch type="ELSE">
+<kw name="Console">
+<arg>High ${i}</arg>
+<status status="NOT RUN" start="2025-02-21T21:06:53.074645" elapsed="0.000008"/>
+</kw>
+<status status="NOT RUN" start="2025-02-21T21:06:53.074608" elapsed="0.000059"/>
+</branch>
+<status status="PASS" start="2025-02-21T21:06:53.074212" elapsed="0.000464"/>
+</if>
+<var name="${i}">1</var>
+<status status="PASS" start="2025-02-21T21:06:53.074198" elapsed="0.000490"/>
+</iter>
+<iter>
+<if>
+<branch type="IF" condition="$i &lt;= 3">
+<kw name="Console">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${output}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-21T21:06:53.074966" elapsed="0.000062"/>
+</kw>
+<arg>Low ${i}</arg>
+<status status="PASS" start="2025-02-21T21:06:53.074850" elapsed="0.000204"/>
+</kw>
+<status status="PASS" start="2025-02-21T21:06:53.074774" elapsed="0.000292"/>
+</branch>
+<branch type="ELSE IF" condition="$i &gt; 3 and $i &lt; 7">
+<kw name="Console">
+<arg>Medium ${i}</arg>
+<status status="NOT RUN" start="2025-02-21T21:06:53.075123" elapsed="0.000009"/>
+</kw>
+<status status="NOT RUN" start="2025-02-21T21:06:53.075079" elapsed="0.000066"/>
+</branch>
+<branch type="ELSE">
+<kw name="Console">
+<arg>High ${i}</arg>
+<status status="NOT RUN" start="2025-02-21T21:06:53.075193" elapsed="0.000007"/>
+</kw>
+<status status="NOT RUN" start="2025-02-21T21:06:53.075156" elapsed="0.000056"/>
+</branch>
+<status status="PASS" start="2025-02-21T21:06:53.074767" elapsed="0.000454"/>
+</if>
+<var name="${i}">2</var>
+<status status="PASS" start="2025-02-21T21:06:53.074753" elapsed="0.000479"/>
+</iter>
+<iter>
+<if>
+<branch type="IF" condition="$i &lt;= 3">
+<kw name="Console">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${output}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-21T21:06:53.075499" elapsed="0.000153"/>
+</kw>
+<arg>Low ${i}</arg>
+<status status="PASS" start="2025-02-21T21:06:53.075385" elapsed="0.000294"/>
+</kw>
+<status status="PASS" start="2025-02-21T21:06:53.075315" elapsed="0.000377"/>
+</branch>
+<branch type="ELSE IF" condition="$i &gt; 3 and $i &lt; 7">
+<kw name="Console">
+<arg>Medium ${i}</arg>
+<status status="NOT RUN" start="2025-02-21T21:06:53.075751" elapsed="0.000009"/>
+</kw>
+<status status="NOT RUN" start="2025-02-21T21:06:53.075705" elapsed="0.000068"/>
+</branch>
+<branch type="ELSE">
+<kw name="Console">
+<arg>High ${i}</arg>
+<status status="NOT RUN" start="2025-02-21T21:06:53.075822" elapsed="0.000007"/>
+</kw>
+<status status="NOT RUN" start="2025-02-21T21:06:53.075784" elapsed="0.000056"/>
+</branch>
+<status status="PASS" start="2025-02-21T21:06:53.075308" elapsed="0.000541"/>
+</if>
+<var name="${i}">3</var>
+<status status="PASS" start="2025-02-21T21:06:53.075295" elapsed="0.000565"/>
+</iter>
+<iter>
+<if>
+<branch type="IF" condition="$i &lt;= 3">
+<kw name="Console">
+<arg>Low ${i}</arg>
+<status status="NOT RUN" start="2025-02-21T21:06:53.076014" elapsed="0.000008"/>
+</kw>
+<status status="NOT RUN" start="2025-02-21T21:06:53.075942" elapsed="0.000094"/>
+</branch>
+<branch type="ELSE IF" condition="$i &gt; 3 and $i &lt; 7">
+<kw name="Console">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${output}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-21T21:06:53.076244" elapsed="0.000062"/>
+</kw>
+<arg>Medium ${i}</arg>
+<status status="PASS" start="2025-02-21T21:06:53.076129" elapsed="0.000203"/>
+</kw>
+<status status="PASS" start="2025-02-21T21:06:53.076046" elapsed="0.000298"/>
+</branch>
+<branch type="ELSE">
+<kw name="Console">
+<arg>High ${i}</arg>
+<status status="NOT RUN" start="2025-02-21T21:06:53.076397" elapsed="0.000009"/>
+</kw>
+<status status="NOT RUN" start="2025-02-21T21:06:53.076356" elapsed="0.000063"/>
+</branch>
+<status status="PASS" start="2025-02-21T21:06:53.075935" elapsed="0.000493"/>
+</if>
+<var name="${i}">4</var>
+<status status="PASS" start="2025-02-21T21:06:53.075923" elapsed="0.000516"/>
+</iter>
+<iter>
+<if>
+<branch type="IF" condition="$i &lt;= 3">
+<kw name="Console">
+<arg>Low ${i}</arg>
+<status status="NOT RUN" start="2025-02-21T21:06:53.076589" elapsed="0.000008"/>
+</kw>
+<status status="NOT RUN" start="2025-02-21T21:06:53.076519" elapsed="0.000091"/>
+</branch>
+<branch type="ELSE IF" condition="$i &gt; 3 and $i &lt; 7">
+<kw name="Console">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${output}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-21T21:06:53.076809" elapsed="0.000061"/>
+</kw>
+<arg>Medium ${i}</arg>
+<status status="PASS" start="2025-02-21T21:06:53.076698" elapsed="0.000197"/>
+</kw>
+<status status="PASS" start="2025-02-21T21:06:53.076620" elapsed="0.000287"/>
+</branch>
+<branch type="ELSE">
+<kw name="Console">
+<arg>High ${i}</arg>
+<status status="NOT RUN" start="2025-02-21T21:06:53.076960" elapsed="0.000008"/>
+</kw>
+<status status="NOT RUN" start="2025-02-21T21:06:53.076918" elapsed="0.000063"/>
+</branch>
+<status status="PASS" start="2025-02-21T21:06:53.076512" elapsed="0.000531"/>
+</if>
+<var name="${i}">5</var>
+<status status="PASS" start="2025-02-21T21:06:53.076500" elapsed="0.000557"/>
+</iter>
+<iter>
+<if>
+<branch type="IF" condition="$i &lt;= 3">
+<kw name="Console">
+<arg>Low ${i}</arg>
+<status status="NOT RUN" start="2025-02-21T21:06:53.077213" elapsed="0.000009"/>
+</kw>
+<status status="NOT RUN" start="2025-02-21T21:06:53.077141" elapsed="0.000095"/>
+</branch>
+<branch type="ELSE IF" condition="$i &gt; 3 and $i &lt; 7">
+<kw name="Console">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${output}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-21T21:06:53.077432" elapsed="0.000061"/>
+</kw>
+<arg>Medium ${i}</arg>
+<status status="PASS" start="2025-02-21T21:06:53.077322" elapsed="0.000195"/>
+</kw>
+<status status="PASS" start="2025-02-21T21:06:53.077247" elapsed="0.000282"/>
+</branch>
+<branch type="ELSE">
+<kw name="Console">
+<arg>High ${i}</arg>
+<status status="NOT RUN" start="2025-02-21T21:06:53.077580" elapsed="0.000008"/>
+</kw>
+<status status="NOT RUN" start="2025-02-21T21:06:53.077540" elapsed="0.000060"/>
+</branch>
+<status status="PASS" start="2025-02-21T21:06:53.077134" elapsed="0.000475"/>
+</if>
+<var name="${i}">6</var>
+<status status="PASS" start="2025-02-21T21:06:53.077121" elapsed="0.000499"/>
+</iter>
+<iter>
+<if>
+<branch type="IF" condition="$i &lt;= 3">
+<kw name="Console">
+<arg>Low ${i}</arg>
+<status status="NOT RUN" start="2025-02-21T21:06:53.077769" elapsed="0.000009"/>
+</kw>
+<status status="NOT RUN" start="2025-02-21T21:06:53.077699" elapsed="0.000093"/>
+</branch>
+<branch type="ELSE IF" condition="$i &gt; 3 and $i &lt; 7">
+<kw name="Console">
+<arg>Medium ${i}</arg>
+<status status="NOT RUN" start="2025-02-21T21:06:53.077880" elapsed="0.000009"/>
+</kw>
+<status status="NOT RUN" start="2025-02-21T21:06:53.077803" elapsed="0.000098"/>
+</branch>
+<branch type="ELSE">
+<kw name="Console">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${output}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-21T21:06:53.078055" elapsed="0.000059"/>
+</kw>
+<arg>High ${i}</arg>
+<status status="PASS" start="2025-02-21T21:06:53.077948" elapsed="0.000190"/>
+</kw>
+<status status="PASS" start="2025-02-21T21:06:53.077911" elapsed="0.000238"/>
+</branch>
+<status status="PASS" start="2025-02-21T21:06:53.077693" elapsed="0.000466"/>
+</if>
+<var name="${i}">7</var>
+<status status="PASS" start="2025-02-21T21:06:53.077681" elapsed="0.000489"/>
+</iter>
+<iter>
+<if>
+<branch type="IF" condition="$i &lt;= 3">
+<kw name="Console">
+<arg>Low ${i}</arg>
+<status status="NOT RUN" start="2025-02-21T21:06:53.078323" elapsed="0.000009"/>
+</kw>
+<status status="NOT RUN" start="2025-02-21T21:06:53.078254" elapsed="0.000091"/>
+</branch>
+<branch type="ELSE IF" condition="$i &gt; 3 and $i &lt; 7">
+<kw name="Console">
+<arg>Medium ${i}</arg>
+<status status="NOT RUN" start="2025-02-21T21:06:53.078433" elapsed="0.000008"/>
+</kw>
+<status status="NOT RUN" start="2025-02-21T21:06:53.078356" elapsed="0.000097"/>
+</branch>
+<branch type="ELSE">
+<kw name="Console">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${output}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-21T21:06:53.078611" elapsed="0.000064"/>
+</kw>
+<arg>High ${i}</arg>
+<status status="PASS" start="2025-02-21T21:06:53.078500" elapsed="0.000200"/>
+</kw>
+<status status="PASS" start="2025-02-21T21:06:53.078463" elapsed="0.000249"/>
+</branch>
+<status status="PASS" start="2025-02-21T21:06:53.078247" elapsed="0.000475"/>
+</if>
+<var name="${i}">8</var>
+<status status="PASS" start="2025-02-21T21:06:53.078234" elapsed="0.000499"/>
+</iter>
+<iter>
+<if>
+<branch type="IF" condition="$i &lt;= 3">
+<kw name="Console">
+<arg>Low ${i}</arg>
+<status status="NOT RUN" start="2025-02-21T21:06:53.078888" elapsed="0.000009"/>
+</kw>
+<status status="NOT RUN" start="2025-02-21T21:06:53.078817" elapsed="0.000094"/>
+</branch>
+<branch type="ELSE IF" condition="$i &gt; 3 and $i &lt; 7">
+<kw name="Console">
+<arg>Medium ${i}</arg>
+<status status="NOT RUN" start="2025-02-21T21:06:53.078997" elapsed="0.000008"/>
+</kw>
+<status status="NOT RUN" start="2025-02-21T21:06:53.078921" elapsed="0.000096"/>
+</branch>
+<branch type="ELSE">
+<kw name="Console">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${output}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-21T21:06:53.079271" elapsed="0.000062"/>
+</kw>
+<arg>High ${i}</arg>
+<status status="PASS" start="2025-02-21T21:06:53.079157" elapsed="0.000203"/>
+</kw>
+<status status="PASS" start="2025-02-21T21:06:53.079028" elapsed="0.000344"/>
+</branch>
+<status status="PASS" start="2025-02-21T21:06:53.078810" elapsed="0.000574"/>
+</if>
+<var name="${i}">9</var>
+<status status="PASS" start="2025-02-21T21:06:53.078798" elapsed="0.000597"/>
+</iter>
+<var>${i}</var>
+<value>10</value>
+<status status="PASS" start="2025-02-21T21:06:53.073430" elapsed="0.005980"/>
+</for>
+<status status="PASS" start="2025-02-21T21:06:53.073311" elapsed="0.006175"/>
+</test>
+<status status="PASS" start="2025-02-21T21:06:53.043653" elapsed="0.036047"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="IF" id="s1" pass="2" fail="0" skip="0">IF</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

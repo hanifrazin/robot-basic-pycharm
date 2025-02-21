@@ -1,0 +1,13 @@
+robot --outputdir=tests/A-simple-example/reports tests/A-simple-example/TestSuite.robot & 
+robot --outputdir=tests/B-simple-example-2/reports tests/B-simple-example-2/test.robot & 
+robot --outputdir=tests/C-advanced-example-2/reports tests/C-advanced-example-2/test.robot & 
+robot --outputdir=tests/D-BDD-example/reports tests/D-BDD-example/Calculator_Test_Suite.robot & 
+robot --outputdir=tests/E-Variables/reports/1_Scalar tests/E-Variables/1_Scalar.robot &
+robot --outputdir=tests/E-Variables/reports/2_Lists tests/E-Variables/2_Lists.robot &
+robot --outputdir=tests/E-Variables/reports/3_Dictionaries tests/E-Variables/3_Dictionaries.robot &
+robot --outputdir=tests/F-FOR-Loops/reports/1_in tests/F-FOR-Loops/1_in.robot &
+robot --outputdir=tests/F-FOR-Loops/reports/2_in_enumerate tests/F-FOR-Loops/2_in_enumerate.robot &
+robot --outputdir=tests/F-FOR-Loops/reports/3_in_range tests/F-FOR-Loops/3_in_range.robot &
+robot --outputdir=tests/F-FOR-Loops/reports/4_in_zip tests/F-FOR-Loops/4_in_zip.robot &
+robot --outputdir=tests/G-IF-Expression/reports tests/G-IF-Expression/IF.robot &
+robot --outputdir=tests/H-Custom/reports tests/H-Custom/TestSuite.robot
