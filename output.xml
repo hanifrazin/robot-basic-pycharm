@@ -1,266 +1,617 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.12.8 on darwin)" generated="2025-02-20T23:14:10.630578" rpa="false" schemaversion="5">
-<suite id="s1" name="3 Dictionaries" source="/Users/user/Documents/PycharmProjects/robot-basic-pycharm/tests/E-Variables/3_Dictionaries.robot">
-<test id="s1-t1" name="Test that accesses Dictionaries" line="15">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>/nLogs Spiderman</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-20T23:14:10.651930" elapsed="0.000094"/>
+<robot generator="Robot 7.2.2 (Python 3.12.8 on darwin)" generated="2025-02-21T17:34:14.115239" rpa="false" schemaversion="5">
+<suite id="s1" name="Test" source="/Users/user/Documents/PycharmProjects/robot-basic-pycharm/tests/C-advanced-example-2/test.robot">
+<kw name="Connect to Server" owner="keywords" type="SETUP">
+<kw name="Connect" owner="CustomLibrary">
+<arg>fe80::aede:48ff:fe00:1122</arg>
+<status status="PASS" start="2025-02-21T17:34:14.137613" elapsed="0.000073"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${SPIDERMAN}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-20T23:14:10.652114" elapsed="0.000090"/>
+<status status="PASS" start="2025-02-21T17:34:14.137397" elapsed="0.000337"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Login: ${SPIDERMAN}[login]</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-20T23:14:10.652266" elapsed="0.000078"/>
+<test id="s1-t1" name="Access All Users With Admin Rights" line="11">
+<kw name="Login Admin" owner="keywords">
+<kw name="Login User" owner="CustomLibrary">
+<arg>${ADMIN}[login]</arg>
+<arg>${ADMIN}[pwd]</arg>
+<doc>`Login User` authenticates a user to the backend.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.138089" elapsed="0.000183"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Name: ${SPIDERMAN}[name]</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-20T23:14:10.652396" elapsed="0.000071"/>
+<kw name="Verify Valid Login" owner="keywords">
+<kw name="Get Server Version" owner="CustomLibrary">
+<msg time="2025-02-21T17:34:14.138497" level="INFO">${version} = 1.0</msg>
+<var>${version}</var>
+<status status="PASS" start="2025-02-21T17:34:14.138444" elapsed="0.000067"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Right: ${SPIDERMAN.right}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-20T23:14:10.652516" elapsed="0.000242"/>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-02-21T17:34:14.138609" level="INFO">Length is 3.</msg>
+<arg>${version}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.138550" elapsed="0.000079"/>
 </kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-20T23:14:10.652872" level="INFO">${var} = active</msg>
-<var>${var}</var>
-<arg>active</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-20T23:14:10.652817" elapsed="0.000073"/>
+<kw name="Get Username" owner="CustomLibrary">
+<msg time="2025-02-21T17:34:14.138722" level="INFO">${name} = Administrator</msg>
+<var>${name}</var>
+<doc>Returns the users full name of the given user_id or if None the own user data.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.138669" elapsed="0.000064"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Active: ${SPIDERMAN}[${var}]</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-20T23:14:10.652943" elapsed="0.000075"/>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${name}</arg>
+<arg>${exp_full_name}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.138773" elapsed="0.000083"/>
 </kw>
-<status status="PASS" start="2025-02-20T23:14:10.651462" elapsed="0.001611"/>
+<arg>Administrator</arg>
+<status status="PASS" start="2025-02-21T17:34:14.138341" elapsed="0.000542"/>
+</kw>
+<doc>'Login Admin' is a Keyword.
+It calls 'Login User' from 'CustomLibrary.py'</doc>
+<status status="PASS" start="2025-02-21T17:34:14.137987" elapsed="0.000914"/>
+</kw>
+<kw name="Print All Users" owner="keywords">
+<kw name="Get All Users" owner="CustomLibrary">
+<msg time="2025-02-21T17:34:14.139137" level="INFO">${users} = [{'name': 'Administrator', 'login': 'admin', 'password': '@RBTFRMWRK@', 'right': 'admin', 'active': True, 'id': '1'}, {'name': 'Hulk', 'login': 'hulk', 'password': 'Hulk...SMASH!', 'right': 'user', 'a...</msg>
+<var>${users}</var>
+<doc>`Get All Users` does return a list of user-dictionaries.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.139077" elapsed="0.000072"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-21T17:34:14.139339" level="INFO">{'name': 'Administrator', 'login': 'admin', 'password': '@RBTFRMWRK@', 'right': 'admin', 'active': True, 'id': '1'}</msg>
+<arg>${user}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.139288" elapsed="0.000070"/>
+</kw>
+<var name="${user}">{'name': 'Administrator', 'login': 'admin', 'password': '@RBTFRMWRK@', 'right': 'admin', 'active': True, 'id': '1'}</var>
+<status status="PASS" start="2025-02-21T17:34:14.139251" elapsed="0.000122"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-21T17:34:14.139497" level="INFO">{'name': 'Hulk', 'login': 'hulk', 'password': 'Hulk...SMASH!', 'right': 'user', 'active': True, 'id': '2'}</msg>
+<arg>${user}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.139448" elapsed="0.000076"/>
+</kw>
+<var name="${user}">{'name': 'Hulk', 'login': 'hulk', 'password': 'Hulk...SMASH!', 'right': 'user', 'active': True, 'id': '2'}</var>
+<status status="PASS" start="2025-02-21T17:34:14.139415" elapsed="0.000123"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-21T17:34:14.139650" level="INFO">{'name': 'Stephen Strange', 'login': 'dr.strange', 'password': 'magic', 'right': 'user', 'active': True, 'id': '3'}</msg>
+<arg>${user}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.139603" elapsed="0.000065"/>
+</kw>
+<var name="${user}">{'name': 'Stephen Strange', 'login': 'dr.strange', 'password': 'magic', 'right': 'user', 'active': True, 'id': '3'}</var>
+<status status="PASS" start="2025-02-21T17:34:14.139574" elapsed="0.000107"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-21T17:34:14.139788" level="INFO">{'name': 'Steve Rogers', 'login': 'captain', 'password': 'shield', 'right': 'user', 'active': True, 'id': '4'}</msg>
+<arg>${user}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.139744" elapsed="0.000060"/>
+</kw>
+<var name="${user}">{'name': 'Steve Rogers', 'login': 'captain', 'password': 'shield', 'right': 'user', 'active': True, 'id': '4'}</var>
+<status status="PASS" start="2025-02-21T17:34:14.139715" elapsed="0.000101"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-21T17:34:14.139925" level="INFO">{'name': 'Tony Stark', 'login': 'ironman', 'password': '1234567890', 'right': 'user', 'active': True, 'id': '5'}</msg>
+<arg>${user}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.139879" elapsed="0.000063"/>
+</kw>
+<var name="${user}">{'name': 'Tony Stark', 'login': 'ironman', 'password': '1234567890', 'right': 'user', 'active': True, 'id': '5'}</var>
+<status status="PASS" start="2025-02-21T17:34:14.139849" elapsed="0.000105"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-21T17:34:14.140062" level="INFO">{'name': 'Peter Parker', 'login': 'spider', 'password': '123spiderman321', 'right': 'user', 'active': True, 'id': '6'}</msg>
+<arg>${user}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.140017" elapsed="0.000062"/>
+</kw>
+<var name="${user}">{'name': 'Peter Parker', 'login': 'spider', 'password': '123spiderman321', 'right': 'user', 'active': True, 'id': '6'}</var>
+<status status="PASS" start="2025-02-21T17:34:14.139987" elapsed="0.000104"/>
+</iter>
+<var>${user}</var>
+<value>@{users}</value>
+<status status="PASS" start="2025-02-21T17:34:14.139180" elapsed="0.000924"/>
+</for>
+<status status="PASS" start="2025-02-21T17:34:14.138986" elapsed="0.001145"/>
+</kw>
+<kw name="Logout User" owner="CustomLibrary" type="TEARDOWN">
+<doc>Logs out the current user.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.140214" elapsed="0.000037"/>
+</kw>
+<doc>Tests if all users can be accessed with Admin User.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.137766" elapsed="0.002512"/>
 </test>
-<test id="s1-t2" name="Test with Dictionaries as Arguments" line="24">
-<kw name="Log A Person">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>The User "${person.login}" belongs to ${person.name} and the password is "${person.password}"</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-20T23:14:10.653482" elapsed="0.000473"/>
+<test id="s1-t2" name="Create User With Admin Rights" line="16">
+<kw name="Login Admin" owner="keywords">
+<kw name="Login User" owner="CustomLibrary">
+<arg>${ADMIN}[login]</arg>
+<arg>${ADMIN}[pwd]</arg>
+<doc>`Login User` authenticates a user to the backend.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.140859" elapsed="0.000094"/>
 </kw>
-<arg>${SPIDERMAN}</arg>
-<status status="PASS" start="2025-02-20T23:14:10.653340" elapsed="0.000645"/>
+<kw name="Verify Valid Login" owner="keywords">
+<kw name="Get Server Version" owner="CustomLibrary">
+<msg time="2025-02-21T17:34:14.141195" level="INFO">${version} = 1.0</msg>
+<var>${version}</var>
+<status status="PASS" start="2025-02-21T17:34:14.141143" elapsed="0.000066"/>
 </kw>
-<kw name="Log A Person">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>The User "${person.login}" belongs to ${person.name} and the password is "${person.password}"</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-20T23:14:10.654168" elapsed="0.000433"/>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-02-21T17:34:14.141305" level="INFO">Length is 3.</msg>
+<arg>${version}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.141250" elapsed="0.000076"/>
 </kw>
-<arg>${IRONMAN}</arg>
-<status status="PASS" start="2025-02-20T23:14:10.654056" elapsed="0.000572"/>
+<kw name="Get Username" owner="CustomLibrary">
+<msg time="2025-02-21T17:34:14.141419" level="INFO">${name} = Administrator</msg>
+<var>${name}</var>
+<doc>Returns the users full name of the given user_id or if None the own user data.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.141367" elapsed="0.000063"/>
 </kw>
-<status status="PASS" start="2025-02-20T23:14:10.653165" elapsed="0.001514"/>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${name}</arg>
+<arg>${exp_full_name}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.141521" elapsed="0.000084"/>
+</kw>
+<arg>Administrator</arg>
+<status status="PASS" start="2025-02-21T17:34:14.141029" elapsed="0.000604"/>
+</kw>
+<doc>'Login Admin' is a Keyword.
+It calls 'Login User' from 'CustomLibrary.py'</doc>
+<status status="PASS" start="2025-02-21T17:34:14.140712" elapsed="0.000941"/>
+</kw>
+<kw name="Create New User" owner="CustomLibrary">
+<arg>name=Peter Parker</arg>
+<arg>login=spider</arg>
+<arg>password=123spiderman321</arg>
+<arg>right=user</arg>
+<doc>Creates a new user with the give data.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.141713" elapsed="0.000067"/>
+</kw>
+<kw name="Verify User Details" owner="keywords">
+<kw name="Get User Id" owner="CustomLibrary">
+<msg time="2025-02-21T17:34:14.142042" level="INFO">${user_id} = spider</msg>
+<var>${user_id}</var>
+<arg>${login}</arg>
+<doc>Returns the user_id based on login.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.141980" elapsed="0.000073"/>
+</kw>
+<kw name="Get User Details" owner="CustomLibrary">
+<msg time="2025-02-21T17:34:14.142178" level="INFO">${user_details} = {'name': 'Peter Parker', 'login': 'spider', 'password': '123spiderman321', 'right': 'user', 'active': True, 'id': '6'}</msg>
+<var>${user_details}</var>
+<arg>${user_id}</arg>
+<doc>Returs the user details of the given user_id or if None the own user data.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.142092" elapsed="0.000098"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${user_details}[login]</arg>
+<arg>${login}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.142232" elapsed="0.000077"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${user_details}[name]</arg>
+<arg>${name}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.142350" elapsed="0.000174"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${user_details}[right]</arg>
+<arg>${right}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.142568" elapsed="0.000072"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-02-21T17:34:14.142739" level="INFO">Argument types are:
+&lt;class 'bool'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${user_details}[active]</arg>
+<arg>${active}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.142680" elapsed="0.000080"/>
+</kw>
+<arg>spider</arg>
+<arg>Peter Parker</arg>
+<doc>Keyword that fetches user details based on a login
+and verifies them against expected arguments.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.141860" elapsed="0.000924"/>
+</kw>
+<kw name="Logout User" owner="CustomLibrary">
+<doc>Logs out the current user.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.142837" elapsed="0.000034"/>
+</kw>
+<kw name="Login User" owner="CustomLibrary">
+<arg>spider</arg>
+<arg>123spiderman321</arg>
+<doc>`Login User` authenticates a user to the backend.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.142918" elapsed="0.000037"/>
+</kw>
+<kw name="Logout User" owner="CustomLibrary" type="TEARDOWN">
+<doc>Logs out the current user.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.143035" elapsed="0.000035"/>
+</kw>
+<doc>Tests if a new users can be created with Admin User.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.140443" elapsed="0.002657"/>
 </test>
-<test id="s1-t3" name="Dictionaries for named arguments" line="28">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n Multiple arguments</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-20T23:14:10.654879" elapsed="0.000064"/>
+<test id="s1-t3" name="Update User with Admin Rights" line="29">
+<kw name="Login Admin" owner="keywords">
+<kw name="Login User" owner="CustomLibrary">
+<arg>${ADMIN}[login]</arg>
+<arg>${ADMIN}[pwd]</arg>
+<doc>`Login User` authenticates a user to the backend.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.143441" elapsed="0.000066"/>
 </kw>
-<kw name="Log Personal Details">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${name} | ${login} | ${password} | ${right} | ${active}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-20T23:14:10.655140" elapsed="0.000100"/>
+<kw name="Verify Valid Login" owner="keywords">
+<kw name="Get Server Version" owner="CustomLibrary">
+<msg time="2025-02-21T17:34:14.143699" level="INFO">${version} = 1.0</msg>
+<var>${version}</var>
+<status status="PASS" start="2025-02-21T17:34:14.143654" elapsed="0.000056"/>
 </kw>
-<arg>Bruce Banner</arg>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-02-21T17:34:14.143790" level="INFO">Length is 3.</msg>
+<arg>${version}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.143746" elapsed="0.000061"/>
+</kw>
+<kw name="Get Username" owner="CustomLibrary">
+<msg time="2025-02-21T17:34:14.143886" level="INFO">${name} = Administrator</msg>
+<var>${name}</var>
+<doc>Returns the users full name of the given user_id or if None the own user data.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.143842" elapsed="0.000054"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${name}</arg>
+<arg>${exp_full_name}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.143935" elapsed="0.000070"/>
+</kw>
+<arg>Administrator</arg>
+<status status="PASS" start="2025-02-21T17:34:14.143564" elapsed="0.000465"/>
+</kw>
+<doc>'Login Admin' is a Keyword.
+It calls 'Login User' from 'CustomLibrary.py'</doc>
+<status status="PASS" start="2025-02-21T17:34:14.143359" elapsed="0.000688"/>
+</kw>
+<kw name="Change Users Password" owner="CustomLibrary">
+<arg>spider</arg>
+<arg>friendly_spider_2022</arg>
+<doc>Changes the password of a user by its name.
+Requires Admin priviliges!</doc>
+<status status="PASS" start="2025-02-21T17:34:14.144096" elapsed="0.000041"/>
+</kw>
+<kw name="Logout User" owner="CustomLibrary">
+<doc>Logs out the current user.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.144188" elapsed="0.000032"/>
+</kw>
+<kw name="Login User" owner="CustomLibrary">
+<arg>spider</arg>
+<arg>friendly_spider_2022</arg>
+<doc>`Login User` authenticates a user to the backend.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.144264" elapsed="0.000036"/>
+</kw>
+<kw name="Logout User" owner="CustomLibrary" type="TEARDOWN">
+<doc>Logs out the current user.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.144373" elapsed="0.000035"/>
+</kw>
+<doc>Changes Password of an existing user.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.143196" elapsed="0.001240"/>
+</test>
+<test id="s1-t4" name="Update Own Password With User Rights" line="36">
+<kw name="Login User" owner="CustomLibrary">
 <arg>hulk</arg>
-<arg>HULK...SMASH!!!</arg>
-<arg>user</arg>
-<arg>${True}</arg>
-<status status="PASS" start="2025-02-20T23:14:10.655003" elapsed="0.000262"/>
+<arg>Hulk...SMASH!</arg>
+<doc>`Login User` authenticates a user to the backend.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.144662" elapsed="0.000041"/>
 </kw>
-<kw name="Log Personal Details">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${name} | ${login} | ${password} | ${right} | ${active}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-20T23:14:10.655485" elapsed="0.000099"/>
+<kw name="Change Own Password" owner="CustomLibrary">
+<msg time="2025-02-21T17:34:14.144830" level="FAIL">ValueError: User not found</msg>
+<arg>Don't make Hulk angry!</arg>
+<arg>Hulk...SMASH!</arg>
+<doc>Changes the own password given the new and current one.</doc>
+<status status="FAIL" start="2025-02-21T17:34:14.144755" elapsed="0.000711">ValueError: User not found</status>
 </kw>
-<arg>password=123456</arg>
-<arg>active=${True}</arg>
-<arg>login=ant</arg>
-<arg>name=Scott Lang</arg>
-<arg>right=guest</arg>
-<status status="PASS" start="2025-02-20T23:14:10.655326" elapsed="0.000289"/>
+<kw name="Logout User" owner="CustomLibrary">
+<doc>Logs out the current user.</doc>
+<status status="NOT RUN" start="2025-02-21T17:34:14.145594" elapsed="0.000016"/>
 </kw>
-<kw name="Log Personal Details">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${name} | ${login} | ${password} | ${right} | ${active}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-20T23:14:10.655810" elapsed="0.000095"/>
+<kw name="Login User" owner="CustomLibrary">
+<arg>hulk</arg>
+<arg>Don't make Hulk angry!</arg>
+<doc>`Login User` authenticates a user to the backend.</doc>
+<status status="NOT RUN" start="2025-02-21T17:34:14.145666" elapsed="0.000010"/>
 </kw>
-<arg>&amp;{IRONMAN}</arg>
-<status status="PASS" start="2025-02-20T23:14:10.655676" elapsed="0.000253"/>
+<kw name="Logout User" owner="CustomLibrary" type="TEARDOWN">
+<doc>Logs out the current user.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.145797" elapsed="0.000061"/>
 </kw>
-<status status="PASS" start="2025-02-20T23:14:10.654760" elapsed="0.001214"/>
+<doc>Changes Password of an existing user.</doc>
+<status status="FAIL" start="2025-02-21T17:34:14.144518" elapsed="0.001371">ValueError: User not found</status>
 </test>
-<test id="s1-t4" name="Test with FOR loops and Dictionaries" line="37">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n---- Logs the keys: ----</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-20T23:14:10.656166" elapsed="0.000052"/>
+<test id="s1-t5" name="Access Own Details With User Rights" line="43">
+<kw name="Login User" owner="CustomLibrary">
+<arg>ironman</arg>
+<arg>1234567890</arg>
+<doc>`Login User` authenticates a user to the backend.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.146186" elapsed="0.000070"/>
 </kw>
-<for flavor="IN">
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>key: ${key}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-20T23:14:10.656406" elapsed="0.000120"/>
+<kw name="Get User Details By Name" owner="keywords">
+<if>
+<branch type="IF" condition="$login">
+<kw name="Get User Id" owner="CustomLibrary">
+<msg time="2025-02-21T17:34:14.146731" level="INFO">${user_id} = ironman</msg>
+<var>${user_id}</var>
+<arg>${login}</arg>
+<doc>Returns the user_id based on login.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.146665" elapsed="0.000077"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>dict[key]: ${IRONMAN}[${key}]</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-20T23:14:10.656583" elapsed="0.000104"/>
+<status status="PASS" start="2025-02-21T17:34:14.146548" elapsed="0.000210"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${user_id}</var>
+<arg>${NONE}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-21T17:34:14.146818" elapsed="0.000009"/>
 </kw>
-<var name="${key}">login</var>
-<status status="PASS" start="2025-02-20T23:14:10.656342" elapsed="0.000411"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>key: ${key}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-20T23:14:10.656910" elapsed="0.000119"/>
+<status status="NOT RUN" start="2025-02-21T17:34:14.146777" elapsed="0.000068"/>
+</branch>
+<status status="PASS" start="2025-02-21T17:34:14.146532" elapsed="0.000324"/>
+</if>
+<kw name="Get User Details" owner="CustomLibrary">
+<msg time="2025-02-21T17:34:14.146972" level="INFO">${user_details} = {'name': 'Tony Stark', 'login': 'ironman', 'password': '1234567890', 'right': 'user', 'active': True, 'id': '5'}</msg>
+<var>${user_details}</var>
+<arg>${user_id}</arg>
+<doc>Returs the user details of the given user_id or if None the own user data.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.146892" elapsed="0.000092"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>dict[key]: ${IRONMAN}[${key}]</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-20T23:14:10.657080" elapsed="0.000087"/>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-21T17:34:14.147076" level="INFO">{'name': 'Tony Stark', 'login': 'ironman', 'password': '1234567890', 'right': 'user', 'active': True, 'id': '5'}</msg>
+<arg>${user_details}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.147025" elapsed="0.000067"/>
 </kw>
-<var name="${key}">password</var>
-<status status="PASS" start="2025-02-20T23:14:10.656846" elapsed="0.000339"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>key: ${key}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-20T23:14:10.657260" elapsed="0.000170"/>
+<return>
+<value>${user_details}</value>
+<status status="PASS" start="2025-02-21T17:34:14.147113" elapsed="0.000023"/>
+</return>
+<arg>ironman</arg>
+<status status="PASS" start="2025-02-21T17:34:14.146396" elapsed="0.000786"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>dict[key]: ${IRONMAN}[${key}]</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-20T23:14:10.657473" elapsed="0.000076"/>
+<kw name="Get User Details By Name" owner="keywords">
+<if>
+<branch type="IF" condition="$login">
+<kw name="Get User Id" owner="CustomLibrary">
+<var>${user_id}</var>
+<arg>${login}</arg>
+<doc>Returns the user_id based on login.</doc>
+<status status="NOT RUN" start="2025-02-21T17:34:14.147588" elapsed="0.000009"/>
 </kw>
-<var name="${key}">name</var>
-<status status="PASS" start="2025-02-20T23:14:10.657228" elapsed="0.000338"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>key: ${key}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-20T23:14:10.657636" elapsed="0.000061"/>
+<status status="NOT RUN" start="2025-02-21T17:34:14.147511" elapsed="0.000103"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-21T17:34:14.147728" level="INFO">${user_id} = None</msg>
+<var>${user_id}</var>
+<arg>${NONE}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.147660" elapsed="0.000079"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>dict[key]: ${IRONMAN}[${key}]</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-20T23:14:10.657734" elapsed="0.000071"/>
+<status status="PASS" start="2025-02-21T17:34:14.147626" elapsed="0.000129"/>
+</branch>
+<status status="PASS" start="2025-02-21T17:34:14.147501" elapsed="0.000263"/>
+</if>
+<kw name="Get User Details" owner="CustomLibrary">
+<msg time="2025-02-21T17:34:14.147867" level="INFO">${user_details} = {'name': 'Tony Stark', 'login': 'ironman', 'password': '1234567890', 'right': 'user', 'active': True, 'id': '5'}</msg>
+<var>${user_details}</var>
+<arg>${user_id}</arg>
+<doc>Returs the user details of the given user_id or if None the own user data.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.147800" elapsed="0.000078"/>
 </kw>
-<var name="${key}">right</var>
-<status status="PASS" start="2025-02-20T23:14:10.657605" elapsed="0.000216"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>key: ${key}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-20T23:14:10.657886" elapsed="0.000059"/>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-21T17:34:14.147968" level="INFO">{'name': 'Tony Stark', 'login': 'ironman', 'password': '1234567890', 'right': 'user', 'active': True, 'id': '5'}</msg>
+<arg>${user_details}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.147919" elapsed="0.000067"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>dict[key]: ${IRONMAN}[${key}]</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-20T23:14:10.657981" elapsed="0.000070"/>
+<return>
+<value>${user_details}</value>
+<status status="PASS" start="2025-02-21T17:34:14.148004" elapsed="0.000015"/>
+</return>
+<status status="PASS" start="2025-02-21T17:34:14.147405" elapsed="0.000655"/>
 </kw>
-<var name="${key}">active</var>
-<status status="PASS" start="2025-02-20T23:14:10.657857" elapsed="0.000208"/>
-</iter>
-<var>${key}</var>
-<value>@{IRONMAN}</value>
-<status status="PASS" start="2025-02-20T23:14:10.656257" elapsed="0.001822"/>
-</for>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>---- Logs Keys &amp; Values ----</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-20T23:14:10.658138" elapsed="0.000044"/>
+<kw name="Get User Details" owner="CustomLibrary">
+<doc>Returs the user details of the given user_id or if None the own user data.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.148109" elapsed="0.000040"/>
 </kw>
-<for flavor="IN">
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${key} : ${value}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-20T23:14:10.658319" elapsed="0.000070"/>
+<kw name="Verify User Details" owner="keywords">
+<kw name="Get User Id" owner="CustomLibrary">
+<msg time="2025-02-21T17:34:14.148396" level="INFO">${user_id} = ironman</msg>
+<var>${user_id}</var>
+<arg>${login}</arg>
+<doc>Returns the user_id based on login.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.148336" elapsed="0.000070"/>
 </kw>
-<var name="${key}">login</var>
-<var name="${value}">spider</var>
-<status status="PASS" start="2025-02-20T23:14:10.658291" elapsed="0.000155"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${key} : ${value}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-20T23:14:10.658515" elapsed="0.000068"/>
+<kw name="Get User Details" owner="CustomLibrary">
+<msg time="2025-02-21T17:34:14.148514" level="INFO">${user_details} = {'name': 'Tony Stark', 'login': 'ironman', 'password': '1234567890', 'right': 'user', 'active': True, 'id': '5'}</msg>
+<var>${user_details}</var>
+<arg>${user_id}</arg>
+<doc>Returs the user details of the given user_id or if None the own user data.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.148444" elapsed="0.000082"/>
 </kw>
-<var name="${key}">password</var>
-<var name="${value}">123spiderman321</var>
-<status status="PASS" start="2025-02-20T23:14:10.658487" elapsed="0.000111"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${key} : ${value}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-20T23:14:10.658662" elapsed="0.000068"/>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${user_details}[login]</arg>
+<arg>${login}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.148567" elapsed="0.000075"/>
 </kw>
-<var name="${key}">name</var>
-<var name="${value}">Peter Parker</var>
-<status status="PASS" start="2025-02-20T23:14:10.658635" elapsed="0.000109"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${key} : ${value}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-20T23:14:10.658808" elapsed="0.000067"/>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${user_details}[name]</arg>
+<arg>${name}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.148683" elapsed="0.000071"/>
 </kw>
-<var name="${key}">right</var>
-<var name="${value}">user</var>
-<status status="PASS" start="2025-02-20T23:14:10.658781" elapsed="0.000108"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${key} : ${value}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-20T23:14:10.658956" elapsed="0.000068"/>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${user_details}[right]</arg>
+<arg>${right}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.148795" elapsed="0.000071"/>
 </kw>
-<var name="${key}">active</var>
-<var name="${value}">True</var>
-<status status="PASS" start="2025-02-20T23:14:10.658929" elapsed="0.000110"/>
-</iter>
-<var>${key}</var>
-<var>${value}</var>
-<value>&amp;{SPIDERMAN}</value>
-<status status="PASS" start="2025-02-20T23:14:10.658218" elapsed="0.000836"/>
-</for>
-<status status="PASS" start="2025-02-20T23:14:10.656048" elapsed="0.003064"/>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-02-21T17:34:14.148966" level="INFO">Argument types are:
+&lt;class 'bool'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${user_details}[active]</arg>
+<arg>${active}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.148905" elapsed="0.000081"/>
+</kw>
+<arg>ironman</arg>
+<arg>Tony Stark</arg>
+<doc>Keyword that fetches user details based on a login
+and verifies them against expected arguments.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.148224" elapsed="0.000786"/>
+</kw>
+<kw name="Logout User" owner="CustomLibrary" type="TEARDOWN">
+<doc>Logs out the current user.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.149089" elapsed="0.000037"/>
+</kw>
+<doc>Tests if a user can access own details</doc>
+<status status="PASS" start="2025-02-21T17:34:14.145988" elapsed="0.003167"/>
 </test>
-<status status="PASS" start="2025-02-20T23:14:10.631420" elapsed="0.027878"/>
+<test id="s1-t6" name="Access Other Users Details With User Rights" line="51">
+<kw name="Login User" owner="CustomLibrary" type="SETUP">
+<arg>ironman</arg>
+<arg>1234567890</arg>
+<doc>`Login User` authenticates a user to the backend.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.149414" elapsed="0.000043"/>
+</kw>
+<kw name="Get User Details By Name" owner="keywords">
+<if>
+<branch type="IF" condition="$login">
+<kw name="Get User Id" owner="CustomLibrary">
+<msg time="2025-02-21T17:34:14.149779" level="INFO">${user_id} = ironman</msg>
+<var>${user_id}</var>
+<arg>${login}</arg>
+<doc>Returns the user_id based on login.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.149719" elapsed="0.000071"/>
+</kw>
+<status status="PASS" start="2025-02-21T17:34:14.149648" elapsed="0.000157"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${user_id}</var>
+<arg>${NONE}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-21T17:34:14.149855" elapsed="0.000008"/>
+</kw>
+<status status="NOT RUN" start="2025-02-21T17:34:14.149818" elapsed="0.000061"/>
+</branch>
+<status status="PASS" start="2025-02-21T17:34:14.149637" elapsed="0.000251"/>
+</if>
+<kw name="Get User Details" owner="CustomLibrary">
+<msg time="2025-02-21T17:34:14.149993" level="INFO">${user_details} = {'name': 'Tony Stark', 'login': 'ironman', 'password': '1234567890', 'right': 'user', 'active': True, 'id': '5'}</msg>
+<var>${user_details}</var>
+<arg>${user_id}</arg>
+<doc>Returs the user details of the given user_id or if None the own user data.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.149919" elapsed="0.000085"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-21T17:34:14.150116" level="INFO">{'name': 'Tony Stark', 'login': 'ironman', 'password': '1234567890', 'right': 'user', 'active': True, 'id': '5'}</msg>
+<arg>${user_details}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.150068" elapsed="0.000065"/>
+</kw>
+<return>
+<value>${user_details}</value>
+<status status="PASS" start="2025-02-21T17:34:14.150150" elapsed="0.000014"/>
+</return>
+<arg>ironman</arg>
+<status status="PASS" start="2025-02-21T17:34:14.149558" elapsed="0.000644"/>
+</kw>
+<kw name="Get User Details By Name" owner="keywords">
+<if>
+<branch type="IF" condition="$login">
+<kw name="Get User Id" owner="CustomLibrary">
+<msg time="2025-02-21T17:34:14.150507" level="INFO">${user_id} = hulk</msg>
+<var>${user_id}</var>
+<arg>${login}</arg>
+<doc>Returns the user_id based on login.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.150449" elapsed="0.000069"/>
+</kw>
+<status status="PASS" start="2025-02-21T17:34:14.150383" elapsed="0.000150"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Variable" owner="BuiltIn">
+<var>${user_id}</var>
+<arg>${NONE}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-02-21T17:34:14.150580" elapsed="0.000008"/>
+</kw>
+<status status="NOT RUN" start="2025-02-21T17:34:14.150545" elapsed="0.000057"/>
+</branch>
+<status status="PASS" start="2025-02-21T17:34:14.150375" elapsed="0.000237"/>
+</if>
+<kw name="Get User Details" owner="CustomLibrary">
+<msg time="2025-02-21T17:34:14.150715" level="INFO">${user_details} = {'name': 'Hulk', 'login': 'hulk', 'password': 'Hulk...SMASH!', 'right': 'user', 'active': True, 'id': '2'}</msg>
+<var>${user_details}</var>
+<arg>${user_id}</arg>
+<doc>Returs the user details of the given user_id or if None the own user data.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.150643" elapsed="0.000083"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-21T17:34:14.150813" level="INFO">{'name': 'Hulk', 'login': 'hulk', 'password': 'Hulk...SMASH!', 'right': 'user', 'active': True, 'id': '2'}</msg>
+<arg>${user_details}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.150766" elapsed="0.000063"/>
+</kw>
+<return>
+<value>${user_details}</value>
+<status status="PASS" start="2025-02-21T17:34:14.150846" elapsed="0.000014"/>
+</return>
+<arg>hulk</arg>
+<status status="PASS" start="2025-02-21T17:34:14.150298" elapsed="0.000599"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-21T17:34:14.150983" level="INFO">This keyword not be executed</msg>
+<arg>This keyword not be executed</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.150949" elapsed="0.000050"/>
+</kw>
+<kw name="Log" owner="BuiltIn" type="TEARDOWN">
+<msg time="2025-02-21T17:34:14.151109" level="INFO">This is executed.</msg>
+<arg>This is executed.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-21T17:34:14.151074" elapsed="0.000052"/>
+</kw>
+<doc>Tests does fail, due to insufficiant rights...</doc>
+<status status="PASS" start="2025-02-21T17:34:14.149245" elapsed="0.001909"/>
+</test>
+<kw name="Disconnect" owner="CustomLibrary" type="TEARDOWN">
+<status status="PASS" start="2025-02-21T17:34:14.151378" elapsed="0.000040"/>
+</kw>
+<doc>A test suite for valid login.
+
+Keywords are imported from the resource file</doc>
+<status status="FAIL" start="2025-02-21T17:34:14.115906" elapsed="0.035525"/>
 </suite>
 <statistics>
 <total>
-<stat pass="4" fail="0" skip="0">All Tests</stat>
+<stat pass="5" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="3 Dictionaries" id="s1" pass="4" fail="0" skip="0">3 Dictionaries</stat>
+<stat name="Test" id="s1" pass="5" fail="1" skip="0">Test</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2025-02-21T17:34:14.135185" level="WARN">Error in file '/Users/user/Documents/PycharmProjects/robot-basic-pycharm/tests/C-advanced-example-2/keywords.resource' on line 66: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
 </errors>
 </robot>

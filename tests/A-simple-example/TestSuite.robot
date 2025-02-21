@@ -1,5 +1,8 @@
 *** Settings ***
-Documentation     A test suite for valid login.
+# Deskripsi tentang test suite atau test case
+Documentation     A test suite for valid login. 
+...               
+...               Simbol Elipsis (titik tiga / ...) digunakan untuk melanjutkan perintah di baris berikutnya 
 ...
 ...               Keywords are imported from the resource file
 Resource          keywords.resource
