@@ -14,7 +14,7 @@ Jika Anda menggunakan zsh (Z Shell) sebagai shell default Anda,
 Anda cukup mengganti bash dengan zsh di akhir perintah. 
 Berikut adalah bagaimana perintah tersebut akan terlihat:
 
-sed -n '2p' command-robot-runner.txt | sed 's/&$//' | zsh
+sed -n '2p' cmd-execute-all.txt | sed 's/&$//' | zsh
 
 Berikut penjelasannya
 1. sed: Ini adalah stream editor yang digunakan untuk memanipulasi teks. 

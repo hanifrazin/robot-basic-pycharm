@@ -1,111 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.12.8 on darwin)" generated="2025-02-21T21:06:53.040438" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.12.8 on darwin)" generated="2025-02-21T21:23:18.861109" rpa="false" schemaversion="5">
 <suite id="s1" name="TestSuite" source="/Users/user/Documents/PycharmProjects/robot-basic-pycharm/tests/A-simple-example/TestSuite.robot">
 <test id="s1-t1" name="Login User with Password" line="12">
 <kw name="Connect to Server" owner="keywords">
 <kw name="Connect" owner="CustomLibrary">
 <arg>fe80::aede:48ff:fe00:1122</arg>
-<status status="PASS" start="2025-02-21T21:06:53.100742" elapsed="0.000078"/>
+<status status="PASS" start="2025-02-21T21:23:18.883713" elapsed="0.000072"/>
 </kw>
-<status status="PASS" start="2025-02-21T21:06:53.100471" elapsed="0.000398"/>
+<status status="PASS" start="2025-02-21T21:23:18.883460" elapsed="0.000378"/>
 </kw>
 <kw name="Login User" owner="CustomLibrary">
-<msg time="2025-02-21T21:06:53.100991" level="INFO">Attempting to authenticate user: ironman with password: 1234567890</msg>
-<msg time="2025-02-21T21:06:53.101010" level="INFO">Authentication successful for user: ironman</msg>
+<msg time="2025-02-21T21:23:18.883959" level="INFO">Attempting to authenticate user: ironman with password: 1234567890</msg>
+<msg time="2025-02-21T21:23:18.883978" level="INFO">Authentication successful for user: ironman</msg>
 <arg>ironman</arg>
 <arg>1234567890</arg>
 <doc>`Login User` authenticates a user to the backend.</doc>
-<status status="PASS" start="2025-02-21T21:06:53.100940" elapsed="0.000091"/>
+<status status="PASS" start="2025-02-21T21:23:18.883910" elapsed="0.000088"/>
 </kw>
 <kw name="Verify Valid Login" owner="keywords">
 <kw name="Get Server Version" owner="CustomLibrary">
-<msg time="2025-02-21T21:06:53.101300" level="INFO">${version} = 1.0.0</msg>
+<msg time="2025-02-21T21:23:18.884262" level="INFO">${version} = 1.0.0</msg>
 <var>${version}</var>
-<status status="PASS" start="2025-02-21T21:06:53.101241" elapsed="0.000072"/>
+<status status="PASS" start="2025-02-21T21:23:18.884202" elapsed="0.000071"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2025-02-21T21:06:53.101428" level="INFO">Length is 5.</msg>
+<msg time="2025-02-21T21:23:18.884373" level="INFO">Length is 5.</msg>
 <arg>${version}</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2025-02-21T21:06:53.101354" elapsed="0.000093"/>
+<status status="PASS" start="2025-02-21T21:23:18.884313" elapsed="0.000077"/>
 </kw>
 <kw name="Get Username" owner="CustomLibrary">
-<msg time="2025-02-21T21:06:53.101543" level="INFO">${name} = Tony Stark</msg>
+<msg time="2025-02-21T21:23:18.884484" level="INFO">${name} = Tony Stark</msg>
 <var>${name}</var>
 <doc>Returns the users full name of the given user_id or if None the own user data.</doc>
-<status status="PASS" start="2025-02-21T21:06:53.101490" elapsed="0.000064"/>
+<status status="PASS" start="2025-02-21T21:23:18.884431" elapsed="0.000064"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${name}</arg>
 <arg>${exp_full_name}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2025-02-21T21:06:53.101598" elapsed="0.000090"/>
+<status status="PASS" start="2025-02-21T21:23:18.884538" elapsed="0.000085"/>
 </kw>
 <arg>Tony Stark</arg>
-<status status="PASS" start="2025-02-21T21:06:53.101121" elapsed="0.000596"/>
+<status status="PASS" start="2025-02-21T21:23:18.884088" elapsed="0.000567"/>
 </kw>
 <kw name="Close Server Connection" owner="keywords" type="TEARDOWN">
 <kw name="Disconnect" owner="CustomLibrary">
-<status status="PASS" start="2025-02-21T21:06:53.101924" elapsed="0.000040"/>
+<status status="PASS" start="2025-02-21T21:23:18.884853" elapsed="0.000041"/>
 </kw>
-<status status="PASS" start="2025-02-21T21:06:53.101822" elapsed="0.000164"/>
+<status status="PASS" start="2025-02-21T21:23:18.884755" elapsed="0.000161"/>
 </kw>
 <tag>positive</tag>
-<status status="PASS" start="2025-02-21T21:06:53.100062" elapsed="0.001951"/>
+<status status="PASS" start="2025-02-21T21:23:18.883078" elapsed="0.001868"/>
 </test>
 <test id="s1-t2" name="Denied Login with Wrong Password" line="18">
 <kw name="Connect to Server" owner="keywords">
 <kw name="Connect" owner="CustomLibrary">
 <arg>fe80::aede:48ff:fe00:1122</arg>
-<status status="PASS" start="2025-02-21T21:06:53.102372" elapsed="0.000044"/>
+<status status="PASS" start="2025-02-21T21:23:18.885281" elapsed="0.000041"/>
 </kw>
-<status status="PASS" start="2025-02-21T21:06:53.102286" elapsed="0.000155"/>
+<status status="PASS" start="2025-02-21T21:23:18.885196" elapsed="0.000149"/>
 </kw>
 <kw name="Run Keyword And Expect Error" owner="BuiltIn">
 <kw name="Login User" owner="CustomLibrary">
-<msg time="2025-02-21T21:06:53.102611" level="INFO">Attempting to authenticate user: ironman with password: 123</msg>
-<msg time="2025-02-21T21:06:53.102625" level="INFO">Authentication failed for user: ironman</msg>
-<msg time="2025-02-21T21:06:53.102790" level="FAIL">ValueError: Invalid Password</msg>
+<msg time="2025-02-21T21:23:18.885500" level="INFO">Attempting to authenticate user: ironman with password: 123</msg>
+<msg time="2025-02-21T21:23:18.885513" level="INFO">Authentication failed for user: ironman</msg>
+<msg time="2025-02-21T21:23:18.885655" level="FAIL">ValueError: Invalid Password</msg>
 <arg>ironman</arg>
 <arg>123</arg>
 <doc>`Login User` authenticates a user to the backend.</doc>
-<status status="FAIL" start="2025-02-21T21:06:53.102575" elapsed="0.001062">ValueError: Invalid Password</status>
+<status status="FAIL" start="2025-02-21T21:23:18.885467" elapsed="0.000852">ValueError: Invalid Password</status>
 </kw>
 <arg>*Invalid Password</arg>
 <arg>Login User</arg>
 <arg>ironman</arg>
 <arg>123</arg>
 <doc>Runs the keyword and checks that the expected error occurred.</doc>
-<status status="PASS" start="2025-02-21T21:06:53.102503" elapsed="0.001377"/>
+<status status="PASS" start="2025-02-21T21:23:18.885404" elapsed="0.001029"/>
 </kw>
 <kw name="Verify Unauthorised Access" owner="keywords">
 <kw name="Run Keyword And Expect Error" owner="BuiltIn">
 <kw name="Get Server Version" owner="CustomLibrary">
-<msg time="2025-02-21T21:06:53.104420" level="FAIL">PermissionError: Unauthorized access</msg>
-<status status="FAIL" start="2025-02-21T21:06:53.104330" elapsed="0.000255">PermissionError: Unauthorized access</status>
+<msg time="2025-02-21T21:23:18.886722" level="FAIL">PermissionError: Unauthorized access</msg>
+<status status="FAIL" start="2025-02-21T21:23:18.886665" elapsed="0.000165">PermissionError: Unauthorized access</status>
 </kw>
 <arg>PermissionError*</arg>
 <arg>Get Server Version</arg>
 <doc>Runs the keyword and checks that the expected error occurred.</doc>
-<status status="PASS" start="2025-02-21T21:06:53.104227" elapsed="0.000469"/>
+<status status="PASS" start="2025-02-21T21:23:18.886606" elapsed="0.000311"/>
 </kw>
-<status status="PASS" start="2025-02-21T21:06:53.104049" elapsed="0.000682"/>
+<status status="PASS" start="2025-02-21T21:23:18.886508" elapsed="0.000435"/>
 </kw>
 <kw name="Close Server Connection" owner="keywords" type="TEARDOWN">
 <kw name="Disconnect" owner="CustomLibrary">
-<status status="PASS" start="2025-02-21T21:06:53.104996" elapsed="0.000047"/>
+<status status="PASS" start="2025-02-21T21:23:18.887161" elapsed="0.000041"/>
 </kw>
-<status status="PASS" start="2025-02-21T21:06:53.104874" elapsed="0.000193"/>
+<status status="PASS" start="2025-02-21T21:23:18.887036" elapsed="0.000187"/>
 </kw>
 <tag>negative</tag>
-<status status="PASS" start="2025-02-21T21:06:53.102124" elapsed="0.002975"/>
+<status status="PASS" start="2025-02-21T21:23:18.885048" elapsed="0.002203"/>
 </test>
 <doc>A test suite for valid login.
 
 Simbol Elipsis (titik tiga / ...) digunakan untuk melanjutkan perintah di baris berikutnya
 
 Keywords are imported from the resource file</doc>
-<status status="PASS" start="2025-02-21T21:06:53.042399" elapsed="0.063317"/>
+<status status="PASS" start="2025-02-21T21:23:18.861829" elapsed="0.025604"/>
 </suite>
 <statistics>
 <total>
