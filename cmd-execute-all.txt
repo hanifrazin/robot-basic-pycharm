@@ -1,13 +1,28 @@
+# Menjalankan test suite A
 robot --outputdir=tests/A-simple-example/reports tests/A-simple-example/TestSuite.robot & 
+
+# Menjalankan test suite B
 robot --outputdir=tests/B-simple-example-2/reports tests/B-simple-example-2/test.robot & 
+
+# Menjalankan test suite C
 robot --outputdir=tests/C-advanced-example-2/reports tests/C-advanced-example-2/test.robot & 
+
+# Menjalankan test suite D
 robot --outputdir=tests/D-BDD-example/reports tests/D-BDD-example/Calculator_Test_Suite.robot & 
+
+# Menjalankan test suite E
 robot --outputdir=tests/E-Variables/reports/1_Scalar tests/E-Variables/1_Scalar.robot &
 robot --outputdir=tests/E-Variables/reports/2_Lists tests/E-Variables/2_Lists.robot &
 robot --outputdir=tests/E-Variables/reports/3_Dictionaries tests/E-Variables/3_Dictionaries.robot &
+
+# Menjalankan test suite F
 robot --outputdir=tests/F-FOR-Loops/reports/1_in tests/F-FOR-Loops/1_in.robot &
 robot --outputdir=tests/F-FOR-Loops/reports/2_in_enumerate tests/F-FOR-Loops/2_in_enumerate.robot &
 robot --outputdir=tests/F-FOR-Loops/reports/3_in_range tests/F-FOR-Loops/3_in_range.robot &
 robot --outputdir=tests/F-FOR-Loops/reports/4_in_zip tests/F-FOR-Loops/4_in_zip.robot &
+
+# Menjalankan test suite G
 robot --outputdir=tests/G-IF-Expression/reports tests/G-IF-Expression/IF.robot &
+
+# Menjalankan test suite H
 robot --outputdir=tests/H-Custom/reports tests/H-Custom/TestSuite.robot
