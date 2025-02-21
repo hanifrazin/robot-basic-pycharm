@@ -1,0 +1,124 @@
+```
+File test.robot berisi test case yang menggunakan keyword dari file keywords.resource. File keywords.resource mendefinisikan beberapa keyword yang digunakan untuk menyimpan, memanipulasi, dan memverifikasi teks. Alur aplikasi adalah menjalankan test case dalam test.robot yang memanggil keyword dalam keywords.resource untuk melakukan berbagai tindakan dan verifikasi.
+
+1. Isi File
+
+*   test.robot
+
+    *   Settings: Mengimpor resource file keywords.resource dan library DateTime.
+    *   Test Cases: Berisi beberapa test case:
+        *   Simple Test Case: Menunjukkan beberapa assertion keyword seperti Should Be Title Case, Should Be Equal, dan Should Be True.
+        *   Test with Keywords: Menggunakan keyword dari keywords.resource untuk menyimpan teks, menambahkan teks, dan memverifikasi panjang teks.
+        *   Test for the year 2022: Mengambil tanggal saat ini dan memverifikasi tahunnya.
+        *   Test Case that fails: Sengaja dibuat gagal dengan memanggil Check Correct Greeting dengan argumen yang salah.
+*   keywords.resource
+
+    *   Settings: Mengimpor library String, Collections, dan DateTime.
+    *   Keywords: Mendefinisikan beberapa keyword:
+        *   Store Text: Menyimpan teks dalam variabel ${stored_text}.
+        *   Add Text to Stored Text: Menambahkan teks ke ${stored_text}.
+        *   Verify Stored Text Length: Memverifikasi panjang ${stored_text}.
+        *   Get Stored Text: Mengembalikan nilai ${stored_text}.
+        *   Check Correct Greeting: Memeriksa apakah greeting yang diberikan benar. Jika salah, test case akan gagal.
+
+2. Struktur File
+
+*   test.robot
+
+    ***Settings***
+    Resource           keywords.resource
+    Library            DateTime
+
+    ***Test Cases***
+    Simple Test Case
+        [Documentation]    Shows some assertion keywords
+        Should Be Title Case    Robot Framework
+        Should Be Equal        Text123        Text123
+        Should Be True         5+5 == 10
+
+    Test with Keywords
+        Store Text             Hail Our Robot
+        Add Text To Stored Text    Overlords!
+        Verify Stored Text Length  25
+        ${current_text}=       Get Stored Text
+        Should Be Equal        ${current_text}    Hail Our Robot Overlords!
+
+    Test for the year 2022
+        [Documentation]    Tests if it is still 2022...
+        ${date}=           Get Current Date    result_format=datetime
+        Log                ${date}
+        Should Be Equal As Strings    ${date.year}    2022
+
+    Test Case that fails
+        Check Correct Greeting    Hail Our Robot Overlords!
+        Check Correct Greeting    Hello World!
+
+*   keywords.resource
+
+    ***Settings***
+    Library    String
+    Library    Collections
+    Library    DateTime
+
+    ***Keywords***
+    Store Text
+        [Arguments]    ${text}
+        Log    The text "${text}" will be store in the varialbe ${stored_text}.
+        Set Suite Variable    ${stored_text}    ${text}
+
+    Add Text to Stored Text
+        [Arguments]    ${text}
+        ${full_text}=    Set Variable    ${stored_text} ${text}
+        Log    The resulting text is: ${full_text}
+        Set Suite Variable    ${stored_text}    ${full_text}
+
+    Verify Stored Text Length
+        [Arguments]    ${expected_length}
+        Length Should Be    ${stored_text}    ${expected_length}
+
+    Get Stored Text
+        [Return]    ${stored_text}
+
+    Check Correct Greeting
+        [Arguments]    ${greeting}
+        IF    $greeting == 'Hail Our Robot Overlods!'
+            Log To Console    \nYou may proceed...
+        ELSE
+            Fail    Sorry. But that was the wrong answer... Bye Bye...
+        END
+
+3. Hubungan Antar File
+
+File test.robot menggunakan resource file keywords.resource. Ini berarti bahwa semua keyword yang didefinisikan dalam keywords.resource dapat digunakan dalam test case di test.robot. Hubungan ini didefinisikan dalam bagian ***Settings*** dari test.robot dengan baris Resource keywords.resource.
+
+4. Cara Membaca
+
+*   test.robot:
+    *   Setiap test case didefinisikan di bawah bagian ***Test Cases***.
+    *   Setiap baris dalam test case adalah sebuah keyword atau statement.
+    *   Variabel didefinisikan dengan tanda ${}.
+    *   Komentar dimulai dengan tanda #.
+*   keywords.resource:
+    *   Setiap keyword didefinisikan di bawah bagian ***Keywords***.
+    *   [Arguments] mendefinisikan argumen yang diterima oleh keyword.
+    *   [Return] mendefinisikan nilai yang dikembalikan oleh keyword.
+
+5. Alur Aplikasi
+
+1.  Inisialisasi: Robot Framework membaca file test.robot.
+2.  Import Resource: test.robot mengimpor keywords.resource, sehingga semua keyword di dalamnya tersedia.
+3.  Eksekusi Test Case: Robot Framework menjalankan setiap test case dalam test.robot secara berurutan.
+4.  Pemanggilan Keyword: Setiap test case memanggil keyword, baik yang built-in (seperti Should Be Equal) maupun yang didefinisikan dalam keywords.resource (seperti Store Text).
+5.  Verifikasi: Keyword melakukan tindakan dan verifikasi sesuai dengan definisinya. Jika verifikasi gagal, test case juga gagal.
+6.  Pelaporan: Robot Framework menghasilkan laporan yang menunjukkan hasil dari setiap test case.
+
+6. Contoh Alur
+
+Misalnya, test case Test with Keywords dalam test.robot:
+
+1.  Store Text Hail Our Robot: Memanggil keyword Store Text dari keywords.resource dengan argumen "Hail Our Robot". Ini akan menyimpan teks tersebut dalam variabel ${stored_text}.
+2.  Add Text To Stored Text Overlords!: Memanggil keyword Add Text To Stored Text dari keywords.resource dengan argumen "Overlords!". Ini akan menambahkan teks "Overlords!" ke ${stored_text}, sehingga ${stored_text} sekarang berisi "Hail Our Robot Overlords!".
+3.  Verify Stored Text Length 25: Memanggil keyword Verify Stored Text Length dari keywords.resource dengan argumen 25. Ini akan memverifikasi bahwa panjang ${stored_text} adalah 25.
+4.  ${current_text}= Get Stored Text: Memanggil keyword Get Stored Text dari keywords.resource. Ini akan mengembalikan nilai ${stored_text} ("Hail Our Robot Overlords!") dan menyimpannya dalam variabel ${current_text}.
+5.  Should Be Equal ${current_text} Hail Our Robot Overlords!: Memverifikasi bahwa nilai ${current_text} sama dengan "Hail Our Robot Overlords!".
+```

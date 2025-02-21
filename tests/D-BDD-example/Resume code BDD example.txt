@@ -1,0 +1,83 @@
+```
+File-file tersebut adalah:
+
+1.  Calculator.py: Berisi kode Python untuk memulai kalkulator dan menghitung ekspresi matematika.
+2.  Calc_keywords.resource: Berisi keywords (kata kunci) yang digunakan oleh Robot Framework untuk berinteraksi dengan kalkulator.
+3.  Calculator_Test_Suite.robot: Berisi test suite (rangkaian pengujian) yang menggunakan keywords untuk menguji fungsionalitas kalkulator.
+
+Penjelasan Detail:
+
+1. Calculator.py
+
+   - Isi File:
+     - File ini berisi dua fungsi utama:
+       - start_calculator(): Fungsi ini hanya mencetak "Calculator Started" ke konsol. Ini mungkin merupakan placeholder untuk inisialisasi kalkulator yang lebih kompleks di masa mendatang.
+       - calculate_term(term): Fungsi ini menerima sebuah string term sebagai input, yang diharapkan menjadi ekspresi matematika. Fungsi ini menggunakan fungsi eval() untuk mengevaluasi ekspresi tersebut dan mengembalikan hasilnya.
+   - Struktur:
+     - File ini memiliki struktur yang sangat sederhana, hanya berisi definisi dua fungsi.
+   - Cara Membaca:
+     - Kode ini mudah dibaca. Fungsi calculate_term() menggunakan eval(), yang memiliki risiko keamanan jika input tidak terpercaya (misalnya, input dari pengguna langsung). Dalam lingkungan produksi, penggunaan eval() harus dihindari dan diganti dengan parser ekspresi matematika yang lebih aman.
+   - Contoh:
+     - Jika Anda memanggil calculate_term("2 + 3 * 4"), fungsi ini akan mengembalikan 14.
+
+2. Calc_keywords.resource
+
+   - Isi File:
+     - File ini berisi keywords yang digunakan oleh Robot Framework untuk berinteraksi dengan kalkulator. Keywords ini berfungsi sebagai lapisan abstraksi yang memungkinkan Anda menulis tes dengan bahasa yang lebih deskriptif.
+     - Keywords yang didefinisikan:
+       - The Calculator is Running: Mencetak "Opening Calculator" ke log.
+       - The User Enters The Term "${term}": Menyimpan nilai term ke dalam variabel global ${term}.
+       - The User Triggers The Calculation: Memanggil fungsi Calculate Term dari Calculator.py dengan nilai ${term} dan menyimpan hasilnya ke dalam variabel global ${result}.
+       - The Result Should Be "${expected}": Memverifikasi apakah ${result} sama dengan ${expected}.
+   - Struktur:
+     - File ini memiliki tiga bagian utama:
+       - ***Settings***: Mendefinisikan library yang digunakan, yaitu Calculator.py.
+       - ***Keywords***: Mendefinisikan keywords yang digunakan dalam tes.
+   - Cara Membaca:
+     - File ini mendefinisikan serangkaian tindakan yang dapat dilakukan pada kalkulator. Setiap keyword mewakili satu langkah dalam sebuah tes.
+   - Contoh:
+     - Keyword The User Enters The Term "1 + 1" akan menyimpan string "1 + 1" ke dalam variabel ${term}.
+
+3. Calculator_Test_Suite.robot
+
+   - Isi File:
+     - File ini berisi test suite yang menggunakan keywords dari Calc_keywords.resource untuk menguji kalkulator.
+     - Test case yang didefinisikan:
+       - Test Calculator With BDD Syntax: Menguji kalkulator dengan sintaks BDD (Behavior-Driven Development).
+   - Struktur:
+     - File ini memiliki dua bagian utama:
+       - ***Settings***: Mendefinisikan resource file yang digunakan, yaitu Calc_keywords.resource.
+       - ***Test Cases***: Mendefinisikan test case yang akan dijalankan.
+   - Cara Membaca:
+     - Test case ini menggunakan sintaks Given-When-Then untuk mendeskripsikan perilaku yang diharapkan dari kalkulator.
+   - Contoh:
+     - Test case Test Calculator With BDD Syntax melakukan langkah-langkah berikut:
+       - Given The Calculator is Running
+       - When The User Enters The Term "1 + 1"
+       - And The User Triggers The Calculation
+       - Then The Result Should Be "2"
+
+Hubungan Antar File:
+
+- Calculator_Test_Suite.robot menggunakan keywords yang didefinisikan dalam Calc_keywords.resource.
+- Calc_keywords.resource menggunakan fungsi-fungsi yang didefinisikan dalam Calculator.py.
+
+Alur Aplikasi:
+
+1. Robot Framework menjalankan test suite Calculator_Test_Suite.robot.
+2. Test case Test Calculator With BDD Syntax dijalankan.
+3. Setiap langkah dalam test case memanggil keyword yang sesuai dari Calc_keywords.resource.
+4. Keywords tersebut memanggil fungsi-fungsi dari Calculator.py untuk berinteraksi dengan kalkulator.
+5. Hasil perhitungan dibandingkan dengan nilai yang diharapkan.
+6. Robot Framework melaporkan hasil tes.
+
+Cara Membaca Alur Aplikasi:
+
+1. Mulai dari Calculator_Test_Suite.robot untuk memahami skenario pengujian.
+2. Lihat Calc_keywords.resource untuk memahami bagaimana setiap langkah dalam skenario pengujian diimplementasikan.
+3. Lihat Calculator.py untuk memahami bagaimana kalkulator itu sendiri bekerja.
+
+Contoh Alur:
+
+Misalnya, ketika Robot Framework menjalankan langkah When The User Enters The Term "1 + 1", keyword The User Enters The Term "${term}" dari Calc_keywords.resource akan dipanggil. Keyword ini akan menyimpan string "1 + 1" ke dalam variabel ${term}. Kemudian, ketika langkah And The User Triggers The Calculation dijalankan, keyword The User Triggers The Calculation akan dipanggil, yang akan memanggil fungsi calculate_term("1 + 1") dari Calculator.py. Fungsi ini akan mengembalikan nilai 2, yang kemudian akan disimpan ke dalam variabel ${result}. Akhirnya, langkah Then The Result Should Be "2" akan memverifikasi bahwa ${result} sama dengan "2".
+```

@@ -1,0 +1,79 @@
+```
+Ringkasan
+
+File TestSuite.robot adalah sebuah test suite yang ditulis dalam sintaks Robot Framework. File ini berisi test case untuk menguji proses login. Test suite ini menggunakan resource file (keywords.resource) yang berisi keywords (fungsi-fungsi) yang digunakan dalam test case. Keywords ini pada gilirannya menggunakan library Python (CustomLibrary.py) untuk melakukan tindakan yang lebih kompleks. TestObject.py menyediakan implementasi backend untuk simulasi otentikasi dan manajemen user.
+
+Cara Membaca TestSuite.robot
+
+1. *** Settings ***
+   - Bagian ini mendefinisikan pengaturan untuk test suite.
+   - Documentation: Deskripsi tentang test suite. Dalam kasus ini, menjelaskan bahwa test suite ini untuk validasi login.
+   - Resource: Menentukan file resource yang digunakan, yaitu keywords.resource. File resource berisi kumpulan keywords yang dapat digunakan dalam test case.
+   - Default Tags: Tag default yang diterapkan ke semua test case dalam suite ini. Dalam kasus ini, tag positive diterapkan.
+
+2. *** Test Cases ***
+   - Bagian ini mendefinisikan test case yang akan dijalankan.
+   - Setiap test case memiliki nama dan serangkaian langkah (steps) yang akan dieksekusi.
+
+3. Contoh Test Case: Login User with Password
+   - Login User with Password: Nama test case.
+   - Connect to Server: Memanggil keyword Connect to Server dari keywords.resource.
+   - Login User ironman 1234567890: Memanggil keyword Login User dari keywords.resource dengan parameter ironman sebagai login dan 1234567890 sebagai password.
+   - Verify Valid Login Tony Stark: Memanggil keyword Verify Valid Login dari keywords.resource dengan parameter Tony Stark sebagai nama lengkap yang diharapkan.
+   - [Teardown] Close Server Connection: Bagian teardown yang akan dieksekusi setelah test case selesai, baik berhasil maupun gagal. Dalam kasus ini, keyword Close Server Connection dipanggil.
+
+4. Contoh Test Case: Denied Login with Wrong Password
+   - [Tags] negative: Menambahkan tag negative ke test case ini.
+   - Connect to Server: Memanggil keyword Connect to Server dari keywords.resource.
+   - Run Keyword And Expect Error *Invalid Password Login User ironman 123: Memanggil keyword Login User dengan parameter yang salah (123 sebagai password) dan memastikan bahwa error dengan pesan *Invalid Password muncul.
+   - Verify Unauthorised Access: Memanggil keyword Verify Unauthorised Access dari keywords.resource untuk memverifikasi bahwa akses tidak sah ditangani dengan benar.
+   - [Teardown] Close Server Connection: Sama seperti sebelumnya, bagian teardown untuk menutup koneksi ke server.
+
+Cara Menjalankan TestSuite.robot
+
+1. Instal Robot Framework:
+   $ pip install robotframework
+
+2. Jalankan Test Suite:
+   Buka terminal atau command prompt, lalu navigasi ke direktori yang berisi TestSuite.robot dan jalankan perintah berikut:
+   $ robot TestSuite.robot
+
+3. Lihat Hasil:
+   Setelah dijalankan, Robot Framework akan menghasilkan laporan dan log dalam format HTML yang dapat Anda buka untuk melihat hasil test.
+
+Hubungan dengan File Lain
+
+1. keywords.resource
+   - File ini berisi keywords yang digunakan dalam TestSuite.robot.
+   - Keywords adalah fungsi-fungsi yang dapat dipanggil dari test case.
+   - Contoh keyword: Login User, Verify Valid Login, Connect to Server, Close Server Connection.
+
+2. CustomLibrary.py
+   - File ini adalah library Python yang berisi implementasi dari keywords yang lebih kompleks.
+   - Library ini menyediakan fungsi-fungsi seperti connect, disconnect, login_user, get_server_version, dan lain-lain.
+   - keywords.resource menggunakan library ini untuk melakukan tindakan yang lebih kompleks.
+
+3. TestObject.py
+   - File ini mendefinisikan kelas TestObject yang digunakan oleh CustomLibrary.py untuk berinteraksi dengan sistem yang diuji (dalam hal ini, simulasi otentikasi dan manajemen user).
+   - TestObject menyediakan metode seperti authenticate, get_version, get_user_name, dll.
+
+4. Alur Eksekusi
+   1. TestSuite.robot memanggil keywords dari keywords.resource.
+   2. keywords.resource menggunakan fungsi-fungsi dari CustomLibrary.py.
+   3. CustomLibrary.py menggunakan TestObject.py untuk melakukan tindakan yang diperlukan.
+
+Contoh Alur Eksekusi: Login User with Password
+
+1. TestSuite.robot memanggil keyword Login User dengan username ironman dan password 1234567890.
+2. Keyword Login User (di keywords.resource) memanggil fungsi login_user dari CustomLibrary.py.
+3. Fungsi login_user (di CustomLibrary.py) memanggil metode authenticate dari TestObject.py dengan username dan password yang diberikan.
+4. TestObject.py memeriksa apakah username dan password valid, dan jika valid, mengembalikan token.
+5. CustomLibrary.py menyimpan token ini dan menggunakannya untuk otentikasi selanjutnya.
+6. TestSuite.robot kemudian memanggil keyword Verify Valid Login untuk memverifikasi bahwa login berhasil.
+
+Kesimpulan
+
+TestSuite.robot adalah test suite yang menggunakan resource file dan library Python untuk menguji proses login. File-file ini bekerja bersama-sama untuk menjalankan test case dan memverifikasi bahwa sistem berfungsi dengan benar. Dengan memahami struktur dan hubungan antara file-file ini, Anda dapat lebih mudah membaca, menjalankan, dan memodifikasi test suite sesuai kebutuhan Anda.
+```
+
+### 

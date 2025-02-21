@@ -1,0 +1,52 @@
+1. File TestObject.py
+   - Deskripsi: File ini mendefinisikan kelas TestObject yang bertanggung jawab untuk mengelola pengguna dan otentikasi.
+   - Fungsi Utama:
+     - __init__: Menginisialisasi objek dengan alamat IP dan mendefinisikan pengguna default.
+     - authenticate: Memverifikasi kredensial pengguna dan mengembalikan token jika berhasil.
+     - logout: Menghapus token pengguna untuk keluar.
+     - get_version: Mengembalikan versi API.
+     - get_user_id: Mengembalikan ID pengguna berdasarkan login.
+     - get_user_name: Mengembalikan nama pengguna berdasarkan ID atau token.
+     - get_user_all: Mengembalikan daftar semua pengguna.
+     - delete_user: Menghapus pengguna berdasarkan ID.
+     - put_user_password: Memperbarui kata sandi pengguna.
+     - post_new_user: Membuat pengguna baru.
+
+2. File CustomLibrary.py
+   - Deskripsi: File ini mendefinisikan kelas CustomLibrary yang berfungsi sebagai keyword library untuk Robot Framework.
+   - Fungsi Utama:
+     - connect: Menghubungkan ke server menggunakan alamat IP.
+     - execute_login: Melakukan otentikasi pengguna dan menyimpan token sesi.
+     - login_user: Mengautentikasi pengguna dengan login dan kata sandi.
+     - logout_user: Mengeluarkan pengguna saat ini.
+     - create_new_user: Membuat pengguna baru dengan data yang diberikan.
+     - get_all_users: Mengembalikan daftar semua pengguna.
+     - get_user_details: Mengembalikan detail pengguna berdasarkan ID atau sesi.
+
+3. File keywords.resource
+   - Deskripsi: File ini berisi keywords dan variabel yang digunakan dalam test suite.
+   - Fungsi Utama:
+     - Connect to Server: Menghubungkan ke server.
+     - Login Admin: Melakukan login sebagai admin dan memverifikasi login.
+     - Verify User Details: Memverifikasi detail pengguna berdasarkan login.
+     - Print All Users: Mencetak semua pengguna yang ada.
+
+4. File test.robot
+   - Deskripsi: File ini adalah test suite yang menguji berbagai fungsi terkait pengelolaan pengguna.
+   - Alur Eksekusi:
+     1. Setup: Menghubungkan ke server dengan Connect to Server.
+     2. Test Cases:
+        - Access All Users With Admin Rights: Login sebagai admin dan mencetak semua pengguna.
+        - Create User With Admin Rights: Login sebagai admin, membuat pengguna baru, dan memverifikasi detail pengguna.
+        - Update User with Admin Rights: Login sebagai admin, mengubah kata sandi pengguna, dan memverifikasi login.
+        - Update Own Password With User Rights: Login sebagai pengguna biasa, mengubah kata sandi, dan memverifikasi login.
+        - Access Own Details With User Rights: Login sebagai pengguna biasa dan mengakses detail pengguna.
+        - Access Other Users Details With User Rights: Mencoba mengakses detail pengguna lain yang seharusnya gagal karena hak akses yang tidak mencukupi.
+
+Contoh Alur Eksekusi:
+Misalkan kita menjalankan test case Create User With Admin Rights:
+1. Login Admin: Memanggil keyword Login Admin, yang menggunakan CustomLibrary untuk login sebagai admin.
+2. Create New User: Memanggil keyword Create New User dengan argumen nama, login, kata sandi, dan hak akses.
+3. Verify User Details: Memanggil keyword Verify User Details untuk memastikan bahwa pengguna baru telah dibuat dengan benar.
+4. Logout User: Memanggil keyword Logout User untuk keluar dari sesi admin.
+5. Login User: Memanggil keyword Login User untuk login sebagai pengguna baru dan memverifikasi bahwa login berhasil.
