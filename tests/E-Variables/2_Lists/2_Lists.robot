@@ -47,8 +47,7 @@ Test with some Collection keywords using list
     Append To List    ${list3}    Torchick    Totodile    Cyndaquil
     ${list4}=    Create List    Pokabu    Blacky    Vaporeon
     ${new_list2}=    Combine Lists    ${list3}    ${list4}
-    Reverse List    ${new_list2}
-    Log Many    ${new_list2}
+    Log Many    ${new_list2}[::-1]     # cara reverse
 
 
 Test to access list entries

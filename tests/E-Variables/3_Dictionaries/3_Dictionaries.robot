@@ -12,8 +12,8 @@ Library    Collections
 
 
 *** Test Cases ***
-Test that accesses Dictionaries
-    Log To Console    /nLogs Spiderman
+Test that accesses Dictionaries using Log To Console
+    Log To Console    \nLogs Spiderman
     Log To Console    ${SPIDERMAN}
     Log To Console    Login: ${SPIDERMAN}[login]
     Log To Console    Name: ${SPIDERMAN}[name]
@@ -21,18 +21,31 @@ Test that accesses Dictionaries
     ${var}=    Set Variable    active
     Log To Console    Active: ${SPIDERMAN}[${var}]  # you may use variable content as keys as well.
 
+Test that accesses Dictionaries using Log
+    Log    \nLogs Spiderman
+    Log    ${SPIDERMAN}
+    Log    Login: ${SPIDERMAN}[login]
+    Log    Name: ${SPIDERMAN}[name]
+    Log    Right: ${SPIDERMAN.right}
+    ${var}=    Set Variable    active
+    Log    Active: ${SPIDERMAN}[${var}]  # you may use variable content as keys as well.
+
 Test with Dictionaries as Arguments
     Log A Person    ${SPIDERMAN}
     Log A Person    ${IRONMAN}
 
+Test with Dictionaries as Arguments using Log
+    Log Person    ${SPIDERMAN}
+    Log Person    ${IRONMAN}
+
 Dictionaries for named arguments
     Log To Console    \n Multiple arguments
-    Log Personal Details    Bruce Banner    hulk                # positional arguments
+    Log Dictionary    Bruce Banner    hulk                # positional arguments
     ...                     HULK...SMASH!!!    user    ${True}
-    Log Personal Details    password=123456    active=${True}   # vs named arguments
+    Log Dictionary    password=123456    active=${True}   # vs named arguments
     ...                     login=ant    name=Scott Lang
     ...                     right=guest
-    Log Personal Details    &{IRONMAN}                          # vs unpacked dictionary as multiple named args
+    Log Dictionary    &{IRONMAN}                          # vs unpacked dictionary as multiple named args
 
 Test with FOR loops and Dictionaries
     Log To Console    \n---- Logs the keys: ----
@@ -48,8 +61,12 @@ Test with FOR loops and Dictionaries
 *** Keywords ***
 Log A Person
     [Arguments]    ${person}
-    Log To Console    The User "${person.login}" belongs to ${person.name} and the password is "${person.password}"
+    Log To Console    \n The User "${person.login}" belongs to ${person.name} and the password is "${person.password}"
 
-Log Personal Details
+Log Dictionary
     [Arguments]    ${name}    ${login}    ${password}    ${right}    ${active}
     Log To Console    ${name} | ${login} | ${password} | ${right} | ${active}
+    Log    ${name} | ${login} | ${password} | ${right} | ${active}
+Log Person
+    [Arguments]    ${person}
+    Log    \n The User "${person.login}" belongs to ${person.name} and the password is "${person.password}"

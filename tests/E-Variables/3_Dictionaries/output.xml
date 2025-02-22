@@ -1,264 +1,354 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.12.8 on darwin)" generated="2025-02-22T09:48:10.106229" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.12.8 on darwin)" generated="2025-02-22T21:55:50.573370" rpa="false" schemaversion="5">
 <suite id="s1" name="3 Dictionaries" source="/Users/user/Documents/PycharmProjects/robot-basic-pycharm/tests/E-Variables/3_Dictionaries/3_Dictionaries.robot">
-<test id="s1-t1" name="Test that accesses Dictionaries" line="15">
+<test id="s1-t1" name="Test that accesses Dictionaries using Log To Console" line="15">
 <kw name="Log To Console" owner="BuiltIn">
-<arg>/nLogs Spiderman</arg>
+<arg>\nLogs Spiderman</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-22T09:48:10.128903" elapsed="0.000113"/>
+<status status="PASS" start="2025-02-22T21:55:50.596029" elapsed="0.000113"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${SPIDERMAN}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-22T09:48:10.129100" elapsed="0.000085"/>
+<status status="PASS" start="2025-02-22T21:55:50.596237" elapsed="0.000092"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Login: ${SPIDERMAN}[login]</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-22T09:48:10.129241" elapsed="0.000072"/>
+<status status="PASS" start="2025-02-22T21:55:50.596390" elapsed="0.000079"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Name: ${SPIDERMAN}[name]</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-22T09:48:10.129361" elapsed="0.000063"/>
+<status status="PASS" start="2025-02-22T21:55:50.596521" elapsed="0.000070"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Right: ${SPIDERMAN.right}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-22T09:48:10.129468" elapsed="0.000216"/>
+<status status="PASS" start="2025-02-22T21:55:50.596639" elapsed="0.000249"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-02-22T09:48:10.129787" level="INFO">${var} = active</msg>
+<msg time="2025-02-22T21:55:50.597003" level="INFO">${var} = active</msg>
 <var>${var}</var>
 <arg>active</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-02-22T09:48:10.129736" elapsed="0.000065"/>
+<status status="PASS" start="2025-02-22T21:55:50.596944" elapsed="0.000075"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Active: ${SPIDERMAN}[${var}]</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-22T09:48:10.129847" elapsed="0.000066"/>
+<status status="PASS" start="2025-02-22T21:55:50.597072" elapsed="0.000075"/>
 </kw>
-<status status="PASS" start="2025-02-22T09:48:10.128432" elapsed="0.001533"/>
+<status status="PASS" start="2025-02-22T21:55:50.595530" elapsed="0.001676"/>
 </test>
-<test id="s1-t2" name="Test with Dictionaries as Arguments" line="24">
+<test id="s1-t2" name="Test that accesses Dictionaries using Log" line="24">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T21:55:50.597488" level="INFO">
+Logs Spiderman</msg>
+<arg>\nLogs Spiderman</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T21:55:50.597440" elapsed="0.000068"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T21:55:50.597613" level="INFO">{'login': 'spider', 'password': '123spiderman321', 'name': 'Peter Parker', 'right': 'user', 'active': True}</msg>
+<arg>${SPIDERMAN}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T21:55:50.597560" elapsed="0.000070"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T21:55:50.597732" level="INFO">Login: spider</msg>
+<arg>Login: ${SPIDERMAN}[login]</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T21:55:50.597678" elapsed="0.000071"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T21:55:50.597848" level="INFO">Name: Peter Parker</msg>
+<arg>Name: ${SPIDERMAN}[name]</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T21:55:50.597796" elapsed="0.000069"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T21:55:50.598108" level="INFO">Right: user</msg>
+<arg>Right: ${SPIDERMAN.right}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T21:55:50.597914" elapsed="0.000212"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-22T21:55:50.598229" level="INFO">${var} = active</msg>
+<var>${var}</var>
+<arg>active</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-22T21:55:50.598179" elapsed="0.000061"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T21:55:50.598355" level="INFO">Active: True</msg>
+<arg>Active: ${SPIDERMAN}[${var}]</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T21:55:50.598293" elapsed="0.000079"/>
+</kw>
+<status status="PASS" start="2025-02-22T21:55:50.597301" elapsed="0.001123"/>
+</test>
+<test id="s1-t3" name="Test with Dictionaries as Arguments" line="33">
 <kw name="Log A Person">
 <kw name="Log To Console" owner="BuiltIn">
-<arg>The User "${person.login}" belongs to ${person.name} and the password is "${person.password}"</arg>
+<arg>\n The User "${person.login}" belongs to ${person.name} and the password is "${person.password}"</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-22T09:48:10.130348" elapsed="0.000425"/>
+<status status="PASS" start="2025-02-22T21:55:50.598810" elapsed="0.000460"/>
 </kw>
 <arg>${SPIDERMAN}</arg>
-<status status="PASS" start="2025-02-22T09:48:10.130225" elapsed="0.000576"/>
+<status status="PASS" start="2025-02-22T21:55:50.598675" elapsed="0.000626"/>
 </kw>
 <kw name="Log A Person">
 <kw name="Log To Console" owner="BuiltIn">
-<arg>The User "${person.login}" belongs to ${person.name} and the password is "${person.password}"</arg>
+<arg>\n The User "${person.login}" belongs to ${person.name} and the password is "${person.password}"</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-22T09:48:10.130963" elapsed="0.000386"/>
+<status status="PASS" start="2025-02-22T21:55:50.599484" elapsed="0.000438"/>
 </kw>
 <arg>${IRONMAN}</arg>
-<status status="PASS" start="2025-02-22T09:48:10.130864" elapsed="0.000510"/>
+<status status="PASS" start="2025-02-22T21:55:50.599371" elapsed="0.000579"/>
 </kw>
-<status status="PASS" start="2025-02-22T09:48:10.130055" elapsed="0.001364"/>
+<status status="PASS" start="2025-02-22T21:55:50.598503" elapsed="0.001494"/>
 </test>
-<test id="s1-t3" name="Dictionaries for named arguments" line="28">
+<test id="s1-t4" name="Test with Dictionaries as Arguments using Log" line="37">
+<kw name="Log Person">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T21:55:50.601019" level="INFO">
+ The User "spider" belongs to Peter Parker and the password is "123spiderman321"</msg>
+<arg>\n The User "${person.login}" belongs to ${person.name} and the password is "${person.password}"</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T21:55:50.600470" elapsed="0.000576"/>
+</kw>
+<arg>${SPIDERMAN}</arg>
+<status status="PASS" start="2025-02-22T21:55:50.600290" elapsed="0.000799"/>
+</kw>
+<kw name="Log Person">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T21:55:50.601840" level="INFO">
+ The User "ironman" belongs to Tony Stark and the password is "1234567890"</msg>
+<arg>\n The User "${person.login}" belongs to ${person.name} and the password is "${person.password}"</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T21:55:50.601320" elapsed="0.000548"/>
+</kw>
+<arg>${IRONMAN}</arg>
+<status status="PASS" start="2025-02-22T21:55:50.601182" elapsed="0.000720"/>
+</kw>
+<status status="PASS" start="2025-02-22T21:55:50.600113" elapsed="0.001852"/>
+</test>
+<test id="s1-t5" name="Dictionaries for named arguments" line="41">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>\n Multiple arguments</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-22T09:48:10.131604" elapsed="0.000049"/>
+<status status="PASS" start="2025-02-22T21:55:50.602191" elapsed="0.000066"/>
 </kw>
-<kw name="Log Personal Details">
+<kw name="Log Dictionary">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${name} | ${login} | ${password} | ${right} | ${active}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-22T09:48:10.131823" elapsed="0.000091"/>
+<status status="PASS" start="2025-02-22T21:55:50.602474" elapsed="0.000204"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T21:55:50.602816" level="INFO">Bruce Banner | hulk | HULK...SMASH!!! | user | True</msg>
+<arg>${name} | ${login} | ${password} | ${right} | ${active}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T21:55:50.602725" elapsed="0.000111"/>
 </kw>
 <arg>Bruce Banner</arg>
 <arg>hulk</arg>
 <arg>HULK...SMASH!!!</arg>
 <arg>user</arg>
 <arg>${True}</arg>
-<status status="PASS" start="2025-02-22T09:48:10.131707" elapsed="0.000229"/>
+<status status="PASS" start="2025-02-22T21:55:50.602335" elapsed="0.000527"/>
 </kw>
-<kw name="Log Personal Details">
+<kw name="Log Dictionary">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${name} | ${login} | ${password} | ${right} | ${active}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-22T09:48:10.132131" elapsed="0.000086"/>
+<status status="PASS" start="2025-02-22T21:55:50.603099" elapsed="0.000105"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T21:55:50.603329" level="INFO">Scott Lang | ant | 123456 | guest | True</msg>
+<arg>${name} | ${login} | ${password} | ${right} | ${active}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T21:55:50.603245" elapsed="0.000103"/>
 </kw>
 <arg>password=123456</arg>
 <arg>active=${True}</arg>
 <arg>login=ant</arg>
 <arg>name=Scott Lang</arg>
 <arg>right=guest</arg>
-<status status="PASS" start="2025-02-22T09:48:10.131993" elapsed="0.000246"/>
+<status status="PASS" start="2025-02-22T21:55:50.602931" elapsed="0.000499"/>
 </kw>
-<kw name="Log Personal Details">
+<kw name="Log Dictionary">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${name} | ${login} | ${password} | ${right} | ${active}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-22T09:48:10.132410" elapsed="0.000084"/>
+<status status="PASS" start="2025-02-22T21:55:50.603644" elapsed="0.000099"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T21:55:50.604069" level="INFO">Tony Stark | ironman | 1234567890 | admin | False</msg>
+<arg>${name} | ${login} | ${password} | ${right} | ${active}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T21:55:50.603895" elapsed="0.000209"/>
 </kw>
 <arg>&amp;{IRONMAN}</arg>
-<status status="PASS" start="2025-02-22T09:48:10.132292" elapsed="0.000223"/>
+<status status="PASS" start="2025-02-22T21:55:50.603500" elapsed="0.000646"/>
 </kw>
-<status status="PASS" start="2025-02-22T09:48:10.131494" elapsed="0.001061"/>
+<status status="PASS" start="2025-02-22T21:55:50.602053" elapsed="0.002174"/>
 </test>
-<test id="s1-t4" name="Test with FOR loops and Dictionaries" line="37">
+<test id="s1-t6" name="Test with FOR loops and Dictionaries" line="50">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>\n---- Logs the keys: ----</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-22T09:48:10.132726" elapsed="0.000047"/>
+<status status="PASS" start="2025-02-22T21:55:50.604476" elapsed="0.000073"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>key: ${key}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-22T09:48:10.132924" elapsed="0.000060"/>
+<status status="PASS" start="2025-02-22T21:55:50.604771" elapsed="0.000073"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>dict[key]: ${IRONMAN}[${key}]</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-22T09:48:10.133017" elapsed="0.000061"/>
+<status status="PASS" start="2025-02-22T21:55:50.604886" elapsed="0.000074"/>
 </kw>
 <var name="${key}">login</var>
-<status status="PASS" start="2025-02-22T09:48:10.132895" elapsed="0.000196"/>
+<status status="PASS" start="2025-02-22T21:55:50.604727" elapsed="0.000249"/>
 </iter>
 <iter>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>key: ${key}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-22T09:48:10.133156" elapsed="0.000055"/>
+<status status="PASS" start="2025-02-22T21:55:50.605053" elapsed="0.000062"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>dict[key]: ${IRONMAN}[${key}]</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-22T09:48:10.133242" elapsed="0.000066"/>
+<status status="PASS" start="2025-02-22T21:55:50.605153" elapsed="0.000074"/>
 </kw>
 <var name="${key}">password</var>
-<status status="PASS" start="2025-02-22T09:48:10.133129" elapsed="0.000192"/>
+<status status="PASS" start="2025-02-22T21:55:50.605022" elapsed="0.000220"/>
 </iter>
 <iter>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>key: ${key}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-22T09:48:10.133379" elapsed="0.000129"/>
+<status status="PASS" start="2025-02-22T21:55:50.605317" elapsed="0.000062"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>dict[key]: ${IRONMAN}[${key}]</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-22T09:48:10.133542" elapsed="0.000061"/>
+<status status="PASS" start="2025-02-22T21:55:50.605415" elapsed="0.000072"/>
 </kw>
 <var name="${key}">name</var>
-<status status="PASS" start="2025-02-22T09:48:10.133354" elapsed="0.000263"/>
+<status status="PASS" start="2025-02-22T21:55:50.605288" elapsed="0.000214"/>
 </iter>
 <iter>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>key: ${key}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-22T09:48:10.133674" elapsed="0.000054"/>
+<status status="PASS" start="2025-02-22T21:55:50.605567" elapsed="0.000062"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>dict[key]: ${IRONMAN}[${key}]</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-22T09:48:10.133760" elapsed="0.000058"/>
+<status status="PASS" start="2025-02-22T21:55:50.605665" elapsed="0.000070"/>
 </kw>
 <var name="${key}">right</var>
-<status status="PASS" start="2025-02-22T09:48:10.133649" elapsed="0.000182"/>
+<status status="PASS" start="2025-02-22T21:55:50.605538" elapsed="0.000211"/>
 </iter>
 <iter>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>key: ${key}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-22T09:48:10.133886" elapsed="0.000052"/>
+<status status="PASS" start="2025-02-22T21:55:50.605814" elapsed="0.000060"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>dict[key]: ${IRONMAN}[${key}]</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-22T09:48:10.133968" elapsed="0.000059"/>
+<status status="PASS" start="2025-02-22T21:55:50.605909" elapsed="0.000069"/>
 </kw>
 <var name="${key}">active</var>
-<status status="PASS" start="2025-02-22T09:48:10.133862" elapsed="0.000178"/>
+<status status="PASS" start="2025-02-22T21:55:50.605786" elapsed="0.000207"/>
 </iter>
 <var>${key}</var>
 <value>@{IRONMAN}</value>
-<status status="PASS" start="2025-02-22T09:48:10.132814" elapsed="0.001238"/>
+<status status="PASS" start="2025-02-22T21:55:50.604601" elapsed="0.001406"/>
 </for>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>---- Logs Keys &amp; Values ----</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-22T09:48:10.134101" elapsed="0.000039"/>
+<status status="PASS" start="2025-02-22T21:55:50.606063" elapsed="0.000049"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${key} : ${value}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-22T09:48:10.134253" elapsed="0.000061"/>
+<status status="PASS" start="2025-02-22T21:55:50.606255" elapsed="0.000072"/>
 </kw>
 <var name="${key}">login</var>
 <var name="${value}">spider</var>
-<status status="PASS" start="2025-02-22T09:48:10.134228" elapsed="0.000130"/>
+<status status="PASS" start="2025-02-22T21:55:50.606225" elapsed="0.000117"/>
 </iter>
 <iter>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${key} : ${value}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-22T09:48:10.134418" elapsed="0.000058"/>
+<status status="PASS" start="2025-02-22T21:55:50.606411" elapsed="0.000069"/>
 </kw>
 <var name="${key}">password</var>
 <var name="${value}">123spiderman321</var>
-<status status="PASS" start="2025-02-22T09:48:10.134394" elapsed="0.000095"/>
+<status status="PASS" start="2025-02-22T21:55:50.606383" elapsed="0.000111"/>
 </iter>
 <iter>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${key} : ${value}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-22T09:48:10.134546" elapsed="0.000057"/>
+<status status="PASS" start="2025-02-22T21:55:50.606560" elapsed="0.000070"/>
 </kw>
 <var name="${key}">name</var>
 <var name="${value}">Peter Parker</var>
-<status status="PASS" start="2025-02-22T09:48:10.134522" elapsed="0.000093"/>
+<status status="PASS" start="2025-02-22T21:55:50.606533" elapsed="0.000112"/>
 </iter>
 <iter>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${key} : ${value}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-22T09:48:10.134672" elapsed="0.000056"/>
+<status status="PASS" start="2025-02-22T21:55:50.606713" elapsed="0.000068"/>
 </kw>
 <var name="${key}">right</var>
 <var name="${value}">user</var>
-<status status="PASS" start="2025-02-22T09:48:10.134649" elapsed="0.000092"/>
+<status status="PASS" start="2025-02-22T21:55:50.606685" elapsed="0.000111"/>
 </iter>
 <iter>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${key} : ${value}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-22T09:48:10.134799" elapsed="0.000058"/>
+<status status="PASS" start="2025-02-22T21:55:50.606863" elapsed="0.000072"/>
 </kw>
 <var name="${key}">active</var>
 <var name="${value}">True</var>
-<status status="PASS" start="2025-02-22T09:48:10.134776" elapsed="0.000094"/>
+<status status="PASS" start="2025-02-22T21:55:50.606835" elapsed="0.000115"/>
 </iter>
 <var>${key}</var>
 <var>${value}</var>
 <value>&amp;{SPIDERMAN}</value>
-<status status="PASS" start="2025-02-22T09:48:10.134170" elapsed="0.000713"/>
+<status status="PASS" start="2025-02-22T21:55:50.606149" elapsed="0.000817"/>
 </for>
-<status status="PASS" start="2025-02-22T09:48:10.132620" elapsed="0.002311"/>
+<status status="PASS" start="2025-02-22T21:55:50.604323" elapsed="0.002705"/>
 </test>
-<status status="PASS" start="2025-02-22T09:48:10.107038" elapsed="0.028052"/>
+<status status="PASS" start="2025-02-22T21:55:50.574084" elapsed="0.033150"/>
 </suite>
 <statistics>
 <total>
-<stat pass="4" fail="0" skip="0">All Tests</stat>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="3 Dictionaries" id="s1" pass="4" fail="0" skip="0">3 Dictionaries</stat>
+<stat name="3 Dictionaries" id="s1" pass="6" fail="0" skip="0">3 Dictionaries</stat>
 </suite>
 </statistics>
 <errors>
