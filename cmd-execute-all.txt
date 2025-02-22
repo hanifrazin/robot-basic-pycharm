@@ -11,15 +11,15 @@ robot --outputdir=tests/C-advanced-example-2/reports tests/C-advanced-example-2/
 robot --outputdir=tests/D-BDD-example/reports tests/D-BDD-example/Calculator_Test_Suite.robot & 
 
 # Menjalankan test suite E
-robot --outputdir=tests/E-Variables/reports/1_Scalar tests/E-Variables/1_Scalar.robot &
-robot --outputdir=tests/E-Variables/reports/2_Lists tests/E-Variables/2_Lists.robot &
-robot --outputdir=tests/E-Variables/reports/3_Dictionaries tests/E-Variables/3_Dictionaries.robot &
+robot --outputdir=tests/E-Variables/1_Scalar tests/E-Variables/1_Scalar/1_Scalar.robot &
+robot --outputdir=tests/E-Variables/2_Lists tests/E-Variables/2_Lists/2_Lists.robot &
+robot --outputdir=tests/E-Variables/3_Dictionaries tests/E-Variables/3_Dictionaries/3_Dictionaries.robot &
 
 # Menjalankan test suite F
-robot --outputdir=tests/F-FOR-Loops/reports/1_in tests/F-FOR-Loops/1_in.robot &
-robot --outputdir=tests/F-FOR-Loops/reports/2_in_enumerate tests/F-FOR-Loops/2_in_enumerate.robot &
-robot --outputdir=tests/F-FOR-Loops/reports/3_in_range tests/F-FOR-Loops/3_in_range.robot &
-robot --outputdir=tests/F-FOR-Loops/reports/4_in_zip tests/F-FOR-Loops/4_in_zip.robot &
+robot --outputdir=tests/F-FOR-Loops/1_in tests/F-FOR-Loops/1_in/1_in.robot &
+robot --outputdir=tests/F-FOR-Loops/2_in_enumerate tests/F-FOR-Loops/2_in_enumerate/2_in_enumerate.robot &
+robot --outputdir=tests/F-FOR-Loops/3_in_range tests/F-FOR-Loops/3_in_range/3_in_range.robot &
+robot --outputdir=tests/F-FOR-Loops/4_in_zip tests/F-FOR-Loops/4_in_zip/4_in_zip.robot &
 
 # Menjalankan test suite G
 robot --outputdir=tests/G-IF-Expression/reports tests/G-IF-Expression/IF.robot &

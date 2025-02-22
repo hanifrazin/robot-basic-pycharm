@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.8 on darwin)" generated="2025-02-22T09:48:10.106212" rpa="false" schemaversion="5">
+<suite id="s1" name="1 Scalar" source="/Users/user/Documents/PycharmProjects/robot-basic-pycharm/tests/E-Variables/1_Scalar/1_Scalar.robot">
+<test id="s1-t1" name="Test Case With Variables" line="7">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.125761" level="INFO">This is a global variable!</msg>
+<arg>${GLOBAL_VAR1}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.125652" elapsed="0.000145"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.125964" level="INFO">String concadination Is simple with "This is a global variable!" and "Equal sign is optional but sometimes helpful."</msg>
+<arg>String concadination Is simple with "${GLOBAL_VAR1}" and "${ANOTHER_GLOBAL}"</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.125882" elapsed="0.000104"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.126089" level="INFO">Escaping with backslash. Then you can use names like ${GLOBAL_VAR1}</msg>
+<arg>Escaping with backslash. Then you can use names like \${GLOBAL_VAR1}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.126044" elapsed="0.000062"/>
+</kw>
+<status status="PASS" start="2025-02-22T09:48:10.125263" elapsed="0.000931"/>
+</test>
+<test id="s1-t2" name="Test with Numbers" line="12">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.126606" level="INFO">1 is a string and 1 is an integer...</msg>
+<arg>1 is a string and ${1} is an integer...</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.126425" elapsed="0.000202"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.126793" level="INFO">${result} = 2</msg>
+<var>${result}</var>
+<arg>1 + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.126692" elapsed="0.000112"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>${2}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.126860" elapsed="0.000175"/>
+</kw>
+<kw name="Should Not Be Equal" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.127144" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${result}</arg>
+<arg>2</arg>
+<doc>Fails if the given objects are equal.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.127093" elapsed="0.000071"/>
+</kw>
+<status status="PASS" start="2025-02-22T09:48:10.126296" elapsed="0.000919"/>
+</test>
+<test id="s1-t3" name="Test Case with Return Values" line="18">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.127500" level="INFO">Return Values can be assigned to Variables</msg>
+<arg>Return Values can be assigned to Variables</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.127400" elapsed="0.000118"/>
+</kw>
+<kw name="Get Hello World As Text">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.127827" level="INFO">this keyword just returns the string "Hello World"</msg>
+<arg>this keyword just returns the string "Hello World"</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.127793" elapsed="0.000061"/>
+</kw>
+<return>
+<value>Hello World</value>
+<status status="PASS" start="2025-02-22T09:48:10.127881" elapsed="0.000042"/>
+</return>
+<msg time="2025-02-22T09:48:10.128027" level="INFO">${the_returned_text} = Hello World</msg>
+<var>${the_returned_text}</var>
+<status status="PASS" start="2025-02-22T09:48:10.127667" elapsed="0.000375"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${the_returned_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.128128" elapsed="0.000096"/>
+</kw>
+<status status="PASS" start="2025-02-22T09:48:10.127292" elapsed="0.000985"/>
+</test>
+<test id="s1-t4" name="Test With Arguments and Return Values" line="23">
+<kw name="Count the Length and Log To Console">
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.128683" level="INFO">Length is 32.</msg>
+<msg time="2025-02-22T09:48:10.128712" level="INFO">${length} = 32</msg>
+<var>${length}</var>
+<arg>${text}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.128635" elapsed="0.000086"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nThe Text "${text}" has ${length} characters...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.128759" elapsed="0.000078"/>
+</kw>
+<return>
+<value>${length}</value>
+<status status="PASS" start="2025-02-22T09:48:10.128857" elapsed="0.000020"/>
+</return>
+<msg time="2025-02-22T09:48:10.128927" level="INFO">${len} = 32</msg>
+<var>${len}</var>
+<arg>Hello Robot Framework Community!</arg>
+<status status="PASS" start="2025-02-22T09:48:10.128523" elapsed="0.000414"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${len}</arg>
+<arg>${32}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.128986" elapsed="0.000175"/>
+</kw>
+<status status="PASS" start="2025-02-22T09:48:10.128354" elapsed="0.000858"/>
+</test>
+<test id="s1-t5" name="Test With Environment Variables" line="27">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.129427" level="INFO">Environment Variables are prefixed with % sign.</msg>
+<arg>Environment Variables are prefixed with % sign.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.129391" elapsed="0.000052"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>The /%{USER} is: %{USER}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.129488" elapsed="0.000070"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>The /%{HOME} is: %{HOME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.129597" elapsed="0.000056"/>
+</kw>
+<status status="PASS" start="2025-02-22T09:48:10.129281" elapsed="0.000414"/>
+</test>
+<test id="s1-t6" name="Test with BuiltIn Variables of Robot Framework" line="32">
+<kw name="Log Variables" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.130223" level="INFO">${/} = /</msg>
+<msg time="2025-02-22T09:48:10.130239" level="INFO">${:} = :</msg>
+<msg time="2025-02-22T09:48:10.130249" level="INFO">${\n} = 
+</msg>
+<msg time="2025-02-22T09:48:10.130258" level="INFO">${ANOTHER_GLOBAL} = Equal sign is optional but sometimes helpful.</msg>
+<msg time="2025-02-22T09:48:10.130268" level="INFO">${DEBUG_FILE} = NONE</msg>
+<msg time="2025-02-22T09:48:10.130276" level="INFO">${EXECDIR} = /Users/user/Documents/PycharmProjects/robot-basic-pycharm</msg>
+<msg time="2025-02-22T09:48:10.130286" level="INFO">${False} = False</msg>
+<msg time="2025-02-22T09:48:10.130294" level="INFO">${GLOBAL_VAR1} = This is a global variable!</msg>
+<msg time="2025-02-22T09:48:10.130302" level="INFO">${LOG_FILE} = /Users/user/Documents/PycharmProjects/robot-basic-pycharm/tests/E-Variables/1_Scalar/log.html</msg>
+<msg time="2025-02-22T09:48:10.130311" level="INFO">${LOG_LEVEL} = INFO</msg>
+<msg time="2025-02-22T09:48:10.130320" level="INFO">${None} = None</msg>
+<msg time="2025-02-22T09:48:10.130328" level="INFO">${null} = None</msg>
+<msg time="2025-02-22T09:48:10.130347" level="INFO">&amp;{OPTIONS} = { include=[] | exclude=[] | skip=[] | skip_on_failure=[] | console_width=78 }</msg>
+<msg time="2025-02-22T09:48:10.130356" level="INFO">${OUTPUT_DIR} = /Users/user/Documents/PycharmProjects/robot-basic-pycharm/tests/E-Variables/1_Scalar</msg>
+<msg time="2025-02-22T09:48:10.130365" level="INFO">${OUTPUT_FILE} = /Users/user/Documents/PycharmProjects/robot-basic-pycharm/tests/E-Variables/1_Scalar/output.xml</msg>
+<msg time="2025-02-22T09:48:10.130423" level="INFO">${PREV_TEST_MESSAGE} = </msg>
+<msg time="2025-02-22T09:48:10.130432" level="INFO">${PREV_TEST_NAME} = Test With Environment Variables</msg>
+<msg time="2025-02-22T09:48:10.130441" level="INFO">${PREV_TEST_STATUS} = PASS</msg>
+<msg time="2025-02-22T09:48:10.130450" level="INFO">${REPORT_FILE} = /Users/user/Documents/PycharmProjects/robot-basic-pycharm/tests/E-Variables/1_Scalar/report.html</msg>
+<msg time="2025-02-22T09:48:10.130458" level="INFO">${SPACE} =  </msg>
+<msg time="2025-02-22T09:48:10.130466" level="INFO">${SUITE_DOCUMENTATION} = </msg>
+<msg time="2025-02-22T09:48:10.130478" level="INFO">&amp;{SUITE_METADATA} = { }</msg>
+<msg time="2025-02-22T09:48:10.130487" level="INFO">${SUITE_NAME} = 1 Scalar</msg>
+<msg time="2025-02-22T09:48:10.130495" level="INFO">${SUITE_SOURCE} = /Users/user/Documents/PycharmProjects/robot-basic-pycharm/tests/E-Variables/1_Scalar/1_Scalar.robot</msg>
+<msg time="2025-02-22T09:48:10.130504" level="INFO">${TEMPDIR} = /var/folders/yc/9p16v6_x74j8ydb5q_h3twb40000gn/T</msg>
+<msg time="2025-02-22T09:48:10.130512" level="INFO">${TEST_DOCUMENTATION} = </msg>
+<msg time="2025-02-22T09:48:10.130520" level="INFO">${TEST_NAME} = Test with BuiltIn Variables of Robot Framework</msg>
+<msg time="2025-02-22T09:48:10.130533" level="INFO">@{TEST_TAGS} = [ ]</msg>
+<msg time="2025-02-22T09:48:10.130542" level="INFO">${True} = True</msg>
+<doc>Logs all variables in the current scope with given log level.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.129865" elapsed="0.000695"/>
+</kw>
+<kw name="Get Variables" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.130766" level="INFO">${all_vars} = {'${/}': '/', '${:}': ':', '${\\n}': '\n', '${ANOTHER_GLOBAL}': 'Equal sign is optional but sometimes helpful.', '${DEBUG_FILE}': 'NONE', '${EXECDIR}': '/Users/user/Documents/PycharmProjects/robot-bas...</msg>
+<var>${all_vars}</var>
+<doc>Returns a dictionary containing all variables in the current scope.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.130612" elapsed="0.000165"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.131018" level="INFO">${value} = /</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.130944" elapsed="0.000084"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.131063" elapsed="0.000068"/>
+</kw>
+<var name="${var}">${/}</var>
+<status status="PASS" start="2025-02-22T09:48:10.130905" elapsed="0.000240"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.131282" level="INFO">${value} = :</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.131216" elapsed="0.000076"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.131325" elapsed="0.000065"/>
+</kw>
+<var name="${var}">${:}</var>
+<status status="PASS" start="2025-02-22T09:48:10.131184" elapsed="0.000220"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.131535" level="INFO">${value} = 
+</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.131466" elapsed="0.000079"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.131577" elapsed="0.000062"/>
+</kw>
+<var name="${var}">${\n}</var>
+<status status="PASS" start="2025-02-22T09:48:10.131439" elapsed="0.000212"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.131776" level="INFO">${value} = Equal sign is optional but sometimes helpful.</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.131711" elapsed="0.000075"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.131818" elapsed="0.000065"/>
+</kw>
+<var name="${var}">${ANOTHER_GLOBAL}</var>
+<status status="PASS" start="2025-02-22T09:48:10.131683" elapsed="0.000213"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.132025" level="INFO">${value} = NONE</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.131957" elapsed="0.000078"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.132067" elapsed="0.000065"/>
+</kw>
+<var name="${var}">${DEBUG_FILE}</var>
+<status status="PASS" start="2025-02-22T09:48:10.131928" elapsed="0.000217"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.132269" level="INFO">${value} = /Users/user/Documents/PycharmProjects/robot-basic-pycharm</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.132205" elapsed="0.000073"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.132310" elapsed="0.000059"/>
+</kw>
+<var name="${var}">${EXECDIR}</var>
+<status status="PASS" start="2025-02-22T09:48:10.132178" elapsed="0.000204"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.132502" level="INFO">${value} = False</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.132441" elapsed="0.000070"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.132542" elapsed="0.000058"/>
+</kw>
+<var name="${var}">${False}</var>
+<status status="PASS" start="2025-02-22T09:48:10.132414" elapsed="0.000198"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.132730" level="INFO">${value} = This is a global variable!</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.132668" elapsed="0.000071"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.132770" elapsed="0.000058"/>
+</kw>
+<var name="${var}">${GLOBAL_VAR1}</var>
+<status status="PASS" start="2025-02-22T09:48:10.132642" elapsed="0.000198"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.132961" level="INFO">${value} = /Users/user/Documents/PycharmProjects/robot-basic-pycharm/tests/E-Variables/1_Scalar/log.html</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.132900" elapsed="0.000071"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.133002" elapsed="0.000062"/>
+</kw>
+<var name="${var}">${LOG_FILE}</var>
+<status status="PASS" start="2025-02-22T09:48:10.132869" elapsed="0.000207"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.133221" level="INFO">${value} = INFO</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.133160" elapsed="0.000070"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.133261" elapsed="0.000058"/>
+</kw>
+<var name="${var}">${LOG_LEVEL}</var>
+<status status="PASS" start="2025-02-22T09:48:10.133132" elapsed="0.000200"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.133451" level="INFO">${value} = None</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.133389" elapsed="0.000071"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.133490" elapsed="0.000060"/>
+</kw>
+<var name="${var}">${None}</var>
+<status status="PASS" start="2025-02-22T09:48:10.133362" elapsed="0.000201"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.133682" level="INFO">${value} = None</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.133620" elapsed="0.000071"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.133721" elapsed="0.000060"/>
+</kw>
+<var name="${var}">${null}</var>
+<status status="PASS" start="2025-02-22T09:48:10.133593" elapsed="0.000202"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.133913" level="INFO">${value} = /Users/user/Documents/PycharmProjects/robot-basic-pycharm/tests/E-Variables/1_Scalar</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.133852" elapsed="0.000070"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.133954" elapsed="0.000058"/>
+</kw>
+<var name="${var}">${OUTPUT_DIR}</var>
+<status status="PASS" start="2025-02-22T09:48:10.133825" elapsed="0.000199"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.134141" level="INFO">${value} = /Users/user/Documents/PycharmProjects/robot-basic-pycharm/tests/E-Variables/1_Scalar/output.xml</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.134080" elapsed="0.000071"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.134181" elapsed="0.000060"/>
+</kw>
+<var name="${var}">${OUTPUT_FILE}</var>
+<status status="PASS" start="2025-02-22T09:48:10.134054" elapsed="0.000199"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.134371" level="INFO">${value} = </msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.134308" elapsed="0.000072"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.134410" elapsed="0.000059"/>
+</kw>
+<var name="${var}">${PREV_TEST_MESSAGE}</var>
+<status status="PASS" start="2025-02-22T09:48:10.134283" elapsed="0.000198"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.134599" level="INFO">${value} = Test With Environment Variables</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.134536" elapsed="0.000072"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.134638" elapsed="0.000058"/>
+</kw>
+<var name="${var}">${PREV_TEST_NAME}</var>
+<status status="PASS" start="2025-02-22T09:48:10.134510" elapsed="0.000199"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.135093" level="INFO">${value} = PASS</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.134975" elapsed="0.000136"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.135169" elapsed="0.000123"/>
+</kw>
+<var name="${var}">${PREV_TEST_STATUS}</var>
+<status status="PASS" start="2025-02-22T09:48:10.134887" elapsed="0.000426"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.135567" level="INFO">${value} = /Users/user/Documents/PycharmProjects/robot-basic-pycharm/tests/E-Variables/1_Scalar/report.html</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.135407" elapsed="0.000171"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.135615" elapsed="0.000147"/>
+</kw>
+<var name="${var}">${REPORT_FILE}</var>
+<status status="PASS" start="2025-02-22T09:48:10.135357" elapsed="0.000437"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.135985" level="INFO">${value} =  </msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.135902" elapsed="0.000095"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.136037" elapsed="0.000081"/>
+</kw>
+<var name="${var}">${SPACE}</var>
+<status status="PASS" start="2025-02-22T09:48:10.135850" elapsed="0.000283"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.136271" level="INFO">${value} = </msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.136204" elapsed="0.000077"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.136314" elapsed="0.000065"/>
+</kw>
+<var name="${var}">${SUITE_DOCUMENTATION}</var>
+<status status="PASS" start="2025-02-22T09:48:10.136171" elapsed="0.000221"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.136519" level="INFO">${value} = 1 Scalar</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.136453" elapsed="0.000075"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.136559" elapsed="0.000060"/>
+</kw>
+<var name="${var}">${SUITE_NAME}</var>
+<status status="PASS" start="2025-02-22T09:48:10.136424" elapsed="0.000209"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.136787" level="INFO">${value} = /Users/user/Documents/PycharmProjects/robot-basic-pycharm/tests/E-Variables/1_Scalar/1_Scalar.robot</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.136725" elapsed="0.000072"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.136828" elapsed="0.000060"/>
+</kw>
+<var name="${var}">${SUITE_SOURCE}</var>
+<status status="PASS" start="2025-02-22T09:48:10.136697" elapsed="0.000204"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.137021" level="INFO">${value} = /var/folders/yc/9p16v6_x74j8ydb5q_h3twb40000gn/T</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.136959" elapsed="0.000071"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.137062" elapsed="0.000059"/>
+</kw>
+<var name="${var}">${TEMPDIR}</var>
+<status status="PASS" start="2025-02-22T09:48:10.136931" elapsed="0.000203"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.137253" level="INFO">${value} = </msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.137191" elapsed="0.000072"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.137294" elapsed="0.000060"/>
+</kw>
+<var name="${var}">${TEST_DOCUMENTATION}</var>
+<status status="PASS" start="2025-02-22T09:48:10.137164" elapsed="0.000203"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.137482" level="INFO">${value} = Test with BuiltIn Variables of Robot Framework</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.137423" elapsed="0.000069"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.137522" elapsed="0.000057"/>
+</kw>
+<var name="${var}">${TEST_NAME}</var>
+<status status="PASS" start="2025-02-22T09:48:10.137397" elapsed="0.000196"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.137711" level="INFO">${value} = True</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.137651" elapsed="0.000069"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.137749" elapsed="0.000057"/>
+</kw>
+<var name="${var}">${True}</var>
+<status status="PASS" start="2025-02-22T09:48:10.137623" elapsed="0.000196"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.137982" level="INFO">${value} = {'include': [], 'exclude': [], 'skip': [], 'skip_on_failure': [], 'console_width': 78}</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.137874" elapsed="0.000118"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.138024" elapsed="0.000065"/>
+</kw>
+<var name="${var}">&amp;{OPTIONS}</var>
+<status status="PASS" start="2025-02-22T09:48:10.137848" elapsed="0.000253"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.138233" level="INFO">${value} = {}</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.138160" elapsed="0.000082"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.138272" elapsed="0.000069"/>
+</kw>
+<var name="${var}">&amp;{SUITE_METADATA}</var>
+<status status="PASS" start="2025-02-22T09:48:10.138133" elapsed="0.000220"/>
+</iter>
+<iter>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2025-02-22T09:48:10.138473" level="INFO">${value} = []</msg>
+<var>${value}</var>
+<arg>${var}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.138410" elapsed="0.000072"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${var} : ${value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T09:48:10.138512" elapsed="0.000063"/>
+</kw>
+<var name="${var}">@{TEST_TAGS}</var>
+<status status="PASS" start="2025-02-22T09:48:10.138383" elapsed="0.000205"/>
+</iter>
+<var>${var}</var>
+<value>@{all_vars}</value>
+<status status="PASS" start="2025-02-22T09:48:10.130819" elapsed="0.007781"/>
+</for>
+<status status="PASS" start="2025-02-22T09:48:10.129759" elapsed="0.008903"/>
+</test>
+<status status="PASS" start="2025-02-22T09:48:10.107011" elapsed="0.031839"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="1 Scalar" id="s1" pass="6" fail="0" skip="0">1 Scalar</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-02-22T09:48:10.104263" level="WARN">Error in file '/Users/user/Documents/PycharmProjects/robot-basic-pycharm/tests/E-Variables/1_Scalar/1_Scalar.robot' on line 44: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2025-02-22T09:48:10.104368" level="WARN">Error in file '/Users/user/Documents/PycharmProjects/robot-basic-pycharm/tests/E-Variables/1_Scalar/1_Scalar.robot' on line 50: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+</errors>
+</robot>

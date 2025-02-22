@@ -1,183 +1,183 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.12.8 on darwin)" generated="2025-02-21T21:06:53.052397" rpa="false" schemaversion="5">
-<suite id="s1" name="1 In" source="/Users/user/Documents/PycharmProjects/robot-basic-pycharm/tests/F-FOR-Loops/1_in.robot">
+<robot generator="Robot 7.2.2 (Python 3.12.8 on darwin)" generated="2025-02-22T09:51:42.457978" rpa="false" schemaversion="5">
+<suite id="s1" name="1 In" source="/Users/user/Documents/PycharmProjects/robot-basic-pycharm/tests/F-FOR-Loops/1_in/1_in.robot">
 <test id="s1-t1" name="Loop over list" line="11">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Four mamals:</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-21T21:06:53.083130" elapsed="0.000130"/>
+<status status="PASS" start="2025-02-22T09:51:42.475993" elapsed="0.000112"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${var}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-21T21:06:53.083497" elapsed="0.000085"/>
+<status status="PASS" start="2025-02-22T09:51:42.476313" elapsed="0.000094"/>
 </kw>
 <var name="${var}">cat</var>
-<status status="PASS" start="2025-02-21T21:06:53.083446" elapsed="0.000161"/>
+<status status="PASS" start="2025-02-22T09:51:42.476267" elapsed="0.000169"/>
 </iter>
 <iter>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${var}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-21T21:06:53.083691" elapsed="0.000069"/>
+<status status="PASS" start="2025-02-22T09:51:42.476533" elapsed="0.000076"/>
 </kw>
 <var name="${var}">dog</var>
-<status status="PASS" start="2025-02-21T21:06:53.083655" elapsed="0.000123"/>
+<status status="PASS" start="2025-02-22T09:51:42.476493" elapsed="0.000133"/>
 </iter>
 <iter>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${var}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-21T21:06:53.083846" elapsed="0.000063"/>
+<status status="PASS" start="2025-02-22T09:51:42.476697" elapsed="0.000075"/>
 </kw>
 <var name="${var}">cow</var>
-<status status="PASS" start="2025-02-21T21:06:53.083816" elapsed="0.000110"/>
+<status status="PASS" start="2025-02-22T09:51:42.476665" elapsed="0.000151"/>
 </iter>
 <var>${var}</var>
 <value>@{mammals}</value>
-<status status="PASS" start="2025-02-21T21:06:53.083336" elapsed="0.000604"/>
+<status status="PASS" start="2025-02-22T09:51:42.476175" elapsed="0.000662"/>
 </for>
-<status status="PASS" start="2025-02-21T21:06:53.082686" elapsed="0.001322"/>
+<status status="PASS" start="2025-02-22T09:51:42.475611" elapsed="0.001324"/>
 </test>
 <test id="s1-t2" name="Loop over two lists after each other" line="17">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Four mamals &amp; four birds:</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-21T21:06:53.084242" elapsed="0.000054"/>
+<status status="PASS" start="2025-02-22T09:51:42.477200" elapsed="0.000076"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${var}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-21T21:06:53.084432" elapsed="0.000138"/>
+<status status="PASS" start="2025-02-22T09:51:42.477426" elapsed="0.000132"/>
 </kw>
 <var name="${var}">cat</var>
-<status status="PASS" start="2025-02-21T21:06:53.084402" elapsed="0.000185"/>
+<status status="PASS" start="2025-02-22T09:51:42.477393" elapsed="0.000182"/>
 </iter>
 <iter>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${var}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-21T21:06:53.084655" elapsed="0.000057"/>
+<status status="PASS" start="2025-02-22T09:51:42.477640" elapsed="0.000055"/>
 </kw>
 <var name="${var}">dog</var>
-<status status="PASS" start="2025-02-21T21:06:53.084624" elapsed="0.000104"/>
+<status status="PASS" start="2025-02-22T09:51:42.477611" elapsed="0.000098"/>
 </iter>
 <iter>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${var}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-21T21:06:53.084790" elapsed="0.000054"/>
+<status status="PASS" start="2025-02-22T09:51:42.477771" elapsed="0.000053"/>
 </kw>
 <var name="${var}">cow</var>
-<status status="PASS" start="2025-02-21T21:06:53.084760" elapsed="0.000099"/>
+<status status="PASS" start="2025-02-22T09:51:42.477739" elapsed="0.000099"/>
 </iter>
 <iter>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${var}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-21T21:06:53.084919" elapsed="0.000060"/>
+<status status="PASS" start="2025-02-22T09:51:42.477891" elapsed="0.000051"/>
 </kw>
 <var name="${var}">eagle</var>
-<status status="PASS" start="2025-02-21T21:06:53.084892" elapsed="0.000100"/>
+<status status="PASS" start="2025-02-22T09:51:42.477866" elapsed="0.000088"/>
 </iter>
 <iter>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${var}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-21T21:06:53.085048" elapsed="0.000053"/>
+<status status="PASS" start="2025-02-22T09:51:42.478006" elapsed="0.000050"/>
 </kw>
 <var name="${var}">falcon</var>
-<status status="PASS" start="2025-02-21T21:06:53.085022" elapsed="0.000093"/>
+<status status="PASS" start="2025-02-22T09:51:42.477982" elapsed="0.000087"/>
 </iter>
 <iter>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${var}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-21T21:06:53.085173" elapsed="0.000055"/>
+<status status="PASS" start="2025-02-22T09:51:42.478119" elapsed="0.000054"/>
 </kw>
 <var name="${var}">ladybird</var>
-<status status="PASS" start="2025-02-21T21:06:53.085147" elapsed="0.000094"/>
+<status status="PASS" start="2025-02-22T09:51:42.478096" elapsed="0.000090"/>
 </iter>
 <var>${var}</var>
 <value>@{mammals}</value>
 <value>@{birds}</value>
-<status status="PASS" start="2025-02-21T21:06:53.084333" elapsed="0.000920"/>
+<status status="PASS" start="2025-02-22T09:51:42.477315" elapsed="0.000883"/>
 </for>
-<status status="PASS" start="2025-02-21T21:06:53.084107" elapsed="0.001205"/>
+<status status="PASS" start="2025-02-22T09:51:42.477036" elapsed="0.001219"/>
 </test>
 <test id="s1-t3" name="Loop over multiple values" line="23">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Four users:</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-21T21:06:53.085517" elapsed="0.000048"/>
+<status status="PASS" start="2025-02-22T09:51:42.478438" elapsed="0.000046"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${var}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-21T21:06:53.085690" elapsed="0.000059"/>
+<status status="PASS" start="2025-02-22T09:51:42.478594" elapsed="0.000055"/>
 </kw>
 <var name="${var}">cat</var>
-<status status="PASS" start="2025-02-21T21:06:53.085661" elapsed="0.000103"/>
+<status status="PASS" start="2025-02-22T09:51:42.478569" elapsed="0.000093"/>
 </iter>
 <iter>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${var}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-21T21:06:53.085823" elapsed="0.000054"/>
+<status status="PASS" start="2025-02-22T09:51:42.478714" elapsed="0.000050"/>
 </kw>
 <var name="${var}">dog</var>
-<status status="PASS" start="2025-02-21T21:06:53.085796" elapsed="0.000096"/>
+<status status="PASS" start="2025-02-22T09:51:42.478690" elapsed="0.000087"/>
 </iter>
 <iter>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${var}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-21T21:06:53.085954" elapsed="0.000054"/>
+<status status="PASS" start="2025-02-22T09:51:42.478831" elapsed="0.000047"/>
 </kw>
 <var name="${var}">cow</var>
-<status status="PASS" start="2025-02-21T21:06:53.085925" elapsed="0.000096"/>
+<status status="PASS" start="2025-02-22T09:51:42.478807" elapsed="0.000083"/>
 </iter>
 <iter>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${var}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-21T21:06:53.086078" elapsed="0.003433"/>
+<status status="PASS" start="2025-02-22T09:51:42.478941" elapsed="0.000050"/>
 </kw>
 <var name="${var}">eagle</var>
-<status status="PASS" start="2025-02-21T21:06:53.086052" elapsed="0.003504"/>
+<status status="PASS" start="2025-02-22T09:51:42.478916" elapsed="0.000088"/>
 </iter>
 <iter>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${var}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-21T21:06:53.089712" elapsed="0.000114"/>
+<status status="PASS" start="2025-02-22T09:51:42.479053" elapsed="0.000047"/>
 </kw>
 <var name="${var}">falcon</var>
-<status status="PASS" start="2025-02-21T21:06:53.089643" elapsed="0.000201"/>
+<status status="PASS" start="2025-02-22T09:51:42.479031" elapsed="0.000081"/>
 </iter>
 <iter>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${var}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-21T21:06:53.089919" elapsed="0.000072"/>
+<status status="PASS" start="2025-02-22T09:51:42.479161" elapsed="0.000052"/>
 </kw>
 <var name="${var}">ladybird</var>
-<status status="PASS" start="2025-02-21T21:06:53.089885" elapsed="0.000122"/>
+<status status="PASS" start="2025-02-22T09:51:42.479138" elapsed="0.000087"/>
 </iter>
 <var>${var}</var>
 <value>@{mammals}</value>
 <value>@{birds}</value>
-<status status="PASS" start="2025-02-21T21:06:53.085598" elapsed="0.004423"/>
+<status status="PASS" start="2025-02-22T09:51:42.478513" elapsed="0.000723"/>
 </for>
-<status status="PASS" start="2025-02-21T21:06:53.085399" elapsed="0.004704"/>
+<status status="PASS" start="2025-02-22T09:51:42.478331" elapsed="0.000954"/>
 </test>
-<status status="PASS" start="2025-02-21T21:06:53.053788" elapsed="0.036538"/>
+<status status="PASS" start="2025-02-22T09:51:42.458797" elapsed="0.020651"/>
 </suite>
 <statistics>
 <total>
