@@ -1,29 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.12.8 on darwin)" generated="2025-02-21T21:06:53.039277" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.12.8 on darwin)" generated="2025-02-22T23:12:02.570635" rpa="false" schemaversion="5">
 <suite id="s1" name="TestSuite" source="/Users/user/Documents/PycharmProjects/robot-basic-pycharm/tests/H-Custom/TestSuite.robot">
-<test id="s1-t1" name="Test Case 1" line="6">
+<test id="s1-t1" name="Test Case 1" line="7">
 <kw name="Say Hello World" owner="keyword">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Hello World</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-21T21:06:53.090243" elapsed="0.000117"/>
+<status status="PASS" start="2025-02-22T23:12:02.587964" elapsed="0.000082"/>
 </kw>
-<status status="PASS" start="2025-02-21T21:06:53.089918" elapsed="0.000498"/>
+<status status="PASS" start="2025-02-22T23:12:02.587643" elapsed="0.000452"/>
 </kw>
-<status status="PASS" start="2025-02-21T21:06:53.089361" elapsed="0.001149"/>
+<status status="PASS" start="2025-02-22T23:12:02.587334" elapsed="0.000826"/>
 </test>
-<status status="PASS" start="2025-02-21T21:06:53.041012" elapsed="0.049717"/>
+<test id="s1-t2" name="Test Case 2" line="10">
+<kw name="Call A Library Keyword" owner="keyword">
+<kw name="Lib Keyword" owner="PythonKeywords">
+<msg time="2025-02-22T23:12:02.588549" level="INFO">Hello Robot</msg>
+<arg>Hello Robot</arg>
+<status status="PASS" start="2025-02-22T23:12:02.588500" elapsed="0.000071"/>
+</kw>
+<status status="PASS" start="2025-02-22T23:12:02.588397" elapsed="0.000200"/>
+</kw>
+<status status="PASS" start="2025-02-22T23:12:02.588254" elapsed="0.000394"/>
+</test>
+<test id="s1-t3" name="Test Case 3" line="13">
+<for flavor="IN">
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nkey: ${dict}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T23:12:02.588962" elapsed="0.000109"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>value: ${python_dict}[${dict}]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T23:12:02.589117" elapsed="0.000084"/>
+</kw>
+<var name="${dict}">name</var>
+<status status="PASS" start="2025-02-22T23:12:02.588920" elapsed="0.000297"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nkey: ${dict}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T23:12:02.589302" elapsed="0.000075"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>value: ${python_dict}[${dict}]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-22T23:12:02.589419" elapsed="0.000073"/>
+</kw>
+<var name="${dict}">last_name</var>
+<status status="PASS" start="2025-02-22T23:12:02.589263" elapsed="0.000245"/>
+</iter>
+<var>${dict}</var>
+<value>@{python_dict}</value>
+<status status="PASS" start="2025-02-22T23:12:02.588831" elapsed="0.000692"/>
+</for>
+<status status="PASS" start="2025-02-22T23:12:02.588732" elapsed="0.000847"/>
+</test>
+<status status="PASS" start="2025-02-22T23:12:02.571913" elapsed="0.017826"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="TestSuite" id="s1" pass="1" fail="0" skip="0">TestSuite</stat>
+<stat name="TestSuite" id="s1" pass="3" fail="0" skip="0">TestSuite</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2025-02-22T23:12:02.587082" level="WARN">Imported library '/Users/user/Documents/PycharmProjects/robot-basic-pycharm/tests/H-Custom/PythonVariables.py' contains no keywords.</msg>
 </errors>
 </robot>
