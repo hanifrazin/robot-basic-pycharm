@@ -6,6 +6,6 @@
 Loop with index over letters
     Log To Console    Lists the Alphabeth
     FOR    ${index}    ${letter}    IN ENUMERATE    @{letters}
-        Log To Console    The ${index + 1}. letter is ${letter}
+        Log To Console    \tThe ${index + 1}. letter is ${letter}
         
     END

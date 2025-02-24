@@ -1,52 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.12.8 on darwin)" generated="2025-02-22T09:51:42.457969" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.12.8 on darwin)" generated="2025-02-24T15:35:51.057656" rpa="false" schemaversion="5">
 <suite id="s1" name="4 In Zip" source="/Users/user/Documents/PycharmProjects/robot-basic-pycharm/tests/F-FOR-Loops/4_in_zip/4_in_zip.robot">
 <test id="s1-t1" name="Combine Two Loops" line="7">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Full Names:</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-22T09:51:42.476180" elapsed="0.000100"/>
+<status status="PASS" start="2025-02-24T15:35:51.074301" elapsed="0.000100"/>
 </kw>
 <for flavor="IN ZIP">
 <iter>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>${first} ${last}</arg>
+<arg>\t${first} ${last}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-22T09:51:42.476491" elapsed="0.000089"/>
+<status status="PASS" start="2025-02-24T15:35:51.074630" elapsed="0.000093"/>
 </kw>
 <var name="${first}">Bruce</var>
 <var name="${last}">Banner</var>
-<status status="PASS" start="2025-02-22T09:51:42.476451" elapsed="0.000150"/>
+<status status="PASS" start="2025-02-24T15:35:51.074590" elapsed="0.000154"/>
 </iter>
 <iter>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>${first} ${last}</arg>
+<arg>\t${first} ${last}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-22T09:51:42.476680" elapsed="0.000071"/>
+<status status="PASS" start="2025-02-24T15:35:51.074821" elapsed="0.000073"/>
 </kw>
 <var name="${first}">Steve</var>
 <var name="${last}">Rogers</var>
-<status status="PASS" start="2025-02-22T09:51:42.476649" elapsed="0.000117"/>
+<status status="PASS" start="2025-02-24T15:35:51.074791" elapsed="0.000118"/>
 </iter>
 <iter>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>${first} ${last}</arg>
+<arg>\t${first} ${last}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-02-22T09:51:42.476833" elapsed="0.000064"/>
+<status status="PASS" start="2025-02-24T15:35:51.074973" elapsed="0.000066"/>
 </kw>
 <var name="${first}">Peter</var>
 <var name="${last}">Parker</var>
-<status status="PASS" start="2025-02-22T09:51:42.476806" elapsed="0.000106"/>
+<status status="PASS" start="2025-02-24T15:35:51.074947" elapsed="0.000106"/>
 </iter>
 <var>${first}</var>
 <var>${last}</var>
 <value>${First Name}</value>
 <value>${Last Name}</value>
-<status status="PASS" start="2025-02-22T09:51:42.476346" elapsed="0.000580"/>
+<status status="PASS" start="2025-02-24T15:35:51.074477" elapsed="0.000590"/>
 </for>
-<status status="PASS" start="2025-02-22T09:51:42.475849" elapsed="0.001146"/>
+<status status="PASS" start="2025-02-24T15:35:51.073960" elapsed="0.001167"/>
 </test>
-<status status="PASS" start="2025-02-22T09:51:42.458864" elapsed="0.018304"/>
+<status status="PASS" start="2025-02-24T15:35:51.058447" elapsed="0.016852"/>
 </suite>
 <statistics>
 <total>
